@@ -1229,6 +1229,7 @@ fheroes2::GameMode Interface::AdventureMap::HumanTurn( const bool isLoadedFromSa
                         EventSwitchFocusedHero( index );
                     }
                 }
+                EventCheatCodeCheck(le.getPressedKeyValue());
             }
 
             if ( res != fheroes2::GameMode::CANCEL ) {

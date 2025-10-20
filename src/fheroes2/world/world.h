@@ -397,6 +397,7 @@ public:
     CapturedObject & GetCapturedObject( const int32_t index );
 
     void ActionForMagellanMaps( const PlayerColor color );
+    void ActionFor8675309CheatCode( const PlayerColor color );
     void ClearFog( PlayerColor color ) const;
 
     bool KingdomIsWins( const Kingdom & kingdom, const uint32_t wins ) const;
