@@ -1,4 +1,4 @@
-# fheroes2
+# fheroes2 (Cheat code 8675309 & 32167 enabled)
 
 **fheroes2** is a recreation of the Heroes of Might and Magic II game engine.
 
