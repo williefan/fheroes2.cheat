@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-14 22:58+0000\n"
+"POT-Creation-Date: 2025-10-23 07:52+0000\n"
 "PO-Revision-Date: 2025-03-31 15:35+0200\n"
 "Last-Translator: fheroes2 team <fhomm2@gmail.com>\n"
 "Language-Team: \n"
@@ -2766,13 +2766,13 @@ msgstr ""
 "derzeit keinen Platz für ein Zauberbuch. Versuchet, eines Eurer Artefakte "
 "einem anderen Helden zu übergeben."
 
-msgid "Click to show next town."
+msgid "Click to show the next town."
 msgstr "Klickt, um die nächste Stadt anzuzeigen."
 
 msgid "Show next town"
 msgstr "Nächste Stadt anzeigen"
 
-msgid "Click to show previous town."
+msgid "Click to show the previous town."
 msgstr "Klickt, um die vorherige Stadt anzuzeigen."
 
 msgid "Show previous town"
@@ -2801,6 +2801,9 @@ msgstr "Die oben genannten Zaubersprüche sind hier verfügbar."
 
 msgid "The spells the hero can learn have been added to their book."
 msgstr "Diese Zaubersprüche wurden Eurem Zauberbuch hinzugefügt."
+
+msgid "Exit Mage Guild"
+msgstr ""
 
 msgid "A generous tip for the barkeep yields the following rumor:"
 msgstr ""
@@ -2857,12 +2860,6 @@ msgstr "Verstreute Formation"
 
 msgid "Grouped Formation"
 msgstr "Gruppierte Formation"
-
-msgid "Click to show the next town."
-msgstr "Klickt, um die nächste Stadt anzuzeigen."
-
-msgid "Click to show the previous town."
-msgstr "Klickt, um die vorherige Stadt anzuzeigen."
 
 msgid "Not enough resources to recruit creatures."
 msgstr "Nicht genügend Ressourcen, um Kreaturen zu rekrutieren."
@@ -12469,12 +12466,13 @@ msgstr ""
 msgid "Dimension Door"
 msgstr "Dimensionstor"
 
-msgid "Returns the caster to any town or castle currently owned."
-msgstr ""
-"Bringt den Zaubernden in jene Stadt oder Burg zurück, die er gerade besitzt."
-
 msgid "Town Gate"
 msgstr "Stadttor"
+
+msgid ""
+"Returns the caster to the nearest town or castle currently owned. This spell "
+"cannot be cast if the hero is already in a town or a castle."
+msgstr ""
 
 msgid ""
 "Returns the hero to the town or castle of choice, provided it is controlled "
@@ -12687,6 +12685,17 @@ msgstr "Er sagte ihr: Yada yada yada... und dann sagte sie: Bla, bla, bla..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "Eine unbekannte Macht wird wiederbelebt..."
+
+#~ msgid "Click to show next town."
+#~ msgstr "Klickt, um die nächste Stadt anzuzeigen."
+
+#~ msgid "Click to show previous town."
+#~ msgstr "Klickt, um die vorherige Stadt anzuzeigen."
+
+#~ msgid "Returns the caster to any town or castle currently owned."
+#~ msgstr ""
+#~ "Bringt den Zaubernden in jene Stadt oder Burg zurück, die er gerade "
+#~ "besitzt."
 
 #~ msgid "Always retaliates"
 #~ msgstr "Vergeltet immer"

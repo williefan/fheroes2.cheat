@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fheroes2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-14 22:58+0000\n"
+"POT-Creation-Date: 2025-10-23 07:52+0000\n"
 "PO-Revision-Date: 2025-03-12 23:48+0100\n"
 "Last-Translator: fheroes2 team <fhomm2@gmail.com>\n"
 "Language-Team: \n"
@@ -2793,13 +2793,15 @@ msgstr ""
 "nemáš miesto pre knihu kúziel. Skús dať jeden zo svojich artefaktov inému "
 "hrdinovi."
 
-msgid "Click to show next town."
+#, fuzzy
+msgid "Click to show the next town."
 msgstr "Kliknutím zobraz ďalšie mesto."
 
 msgid "Show next town"
 msgstr "Ukáž ďalšie mesto"
 
-msgid "Click to show previous town."
+#, fuzzy
+msgid "Click to show the previous town."
 msgstr "Kliknutím zobraz predošlé mesto."
 
 msgid "Show previous town"
@@ -2828,6 +2830,9 @@ msgstr "Vyššie uvedené kúzla sú tu dostupné."
 
 msgid "The spells the hero can learn have been added to their book."
 msgstr "Do knihy boli pridané kúzla, ktoré sa hrdina môže naučiť."
+
+msgid "Exit Mage Guild"
+msgstr ""
 
 msgid "A generous tip for the barkeep yields the following rumor:"
 msgstr "Štedré prepitné pre barmana prináša nasledujúcu fámu:"
@@ -2883,14 +2888,6 @@ msgstr "Široká formácia"
 
 msgid "Grouped Formation"
 msgstr "Zoskupená formácia"
-
-#, fuzzy
-msgid "Click to show the next town."
-msgstr "Kliknutím zobraz ďalšie mesto."
-
-#, fuzzy
-msgid "Click to show the previous town."
-msgstr "Kliknutím zobraz predošlé mesto."
 
 msgid "Not enough resources to recruit creatures."
 msgstr "Nie je dostatok zdrojov na nábor bojovníkov."
@@ -12364,12 +12361,13 @@ msgstr "Umožňuje zaklínačovi magicky sa preniesť na blízke miesto."
 msgid "Dimension Door"
 msgstr "Dimenzionálne dvere"
 
-msgid "Returns the caster to any town or castle currently owned."
-msgstr ""
-"Vráti zosielateľa do ktoréhokoľvek mesta alebo hradu, ktorý práve vlastníš."
-
 msgid "Town Gate"
 msgstr "Mestská brána"
+
+msgid ""
+"Returns the caster to the nearest town or castle currently owned. This spell "
+"cannot be cast if the hero is already in a town or a castle."
+msgstr ""
 
 msgid ""
 "Returns the hero to the town or castle of choice, provided it is controlled "
@@ -12581,6 +12579,17 @@ msgstr "Povedal jej: Jada jada jada... a ona na to že: Blá, blá, blá..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "Neznáma sila je vzkriesená..."
+
+#~ msgid "Click to show next town."
+#~ msgstr "Kliknutím zobraz ďalšie mesto."
+
+#~ msgid "Click to show previous town."
+#~ msgstr "Kliknutím zobraz predošlé mesto."
+
+#~ msgid "Returns the caster to any town or castle currently owned."
+#~ msgstr ""
+#~ "Vráti zosielateľa do ktoréhokoľvek mesta alebo hradu, ktorý práve "
+#~ "vlastníš."
 
 #~ msgid "Always retaliates"
 #~ msgstr "Vždy vracia úder"
