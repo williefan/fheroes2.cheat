@@ -249,6 +249,11 @@ Heroes::Heroes( const int heroId, const int race )
     , _race( race )
 {
     _army.Reset( true );
+    if(_id > CELIA && _id < DEBUG_HERO) {
+        ResetModes(AVAIL); //对于战役模式英雄，默认不可用，后面load地图时将地图中存在的英雄设为可用
+    } else {
+        SetModes(AVAIL); //普通模式的英雄，默认可用
+    } 
 
     // Add to debug hero a lot of stuff.
     if ( _id == DEBUG_HERO ) {
@@ -415,7 +420,7 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
     // - unused 15 bytes
     //    Always zeros.
 
-    modes = 0;
+    modes = AVAIL; //当地图中存在该英雄时，设为可用
 
     if ( isInJail ) {
         SetModes( JAIL );
@@ -427,8 +432,6 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
     // The hero's race can be changed if the portrait that was specified using the map editor does not match the desired race of this hero, or if there are no free heroes
     // of the desired race
     if ( _race != raceType ) {
-        SetModes( CUSTOM );
-
         _race = raceType;
     }
 
@@ -482,8 +485,6 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
 
     const bool doesHeroHaveCustomPortrait = ( dataStream.get() != 0 );
     if ( doesHeroHaveCustomPortrait ) {
-        SetModes( CUSTOM );
-
         // Portrait sprite index. It should be increased by 1 as in the original game hero IDs start from 0.
         _portrait = dataStream.get() + 1;
 
@@ -518,8 +519,6 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
 
     const bool doesHeroHaveCustomSecondarySkills = ( dataStream.get() != 0 );
     if ( doesHeroHaveCustomSecondarySkills ) {
-        SetModes( CUSTOM );
-
         std::array<Skill::Secondary, 8> secs;
 
         for ( Skill::Secondary & skill : secs ) {
@@ -556,7 +555,6 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
         // An empty name can be set in the original Editor which is wrong.
         std::string temp = dataStream.getString( 13 );
         if ( !temp.empty() ) {
-            SetModes( CUSTOM );
             _name = std::move( temp );
         }
     }
@@ -581,8 +579,6 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
     // Level up if needed
     const int level = GetLevel();
     if ( level > 1 ) {
-        SetModes( CUSTOM );
-
         for ( int i = 1; i < level; ++i ) {
             _levelUp( doesHeroHaveCustomSecondarySkills, true );
         }
@@ -603,8 +599,6 @@ void Heroes::applyHeroMetadata( const Maps::Map_Format::HeroMetadata & heroMetad
     }
 
     if ( _race != heroMetadata.race ) {
-        SetModes( CUSTOM );
-
         _race = heroMetadata.race;
     }
 
@@ -620,8 +614,6 @@ void Heroes::applyHeroMetadata( const Maps::Map_Format::HeroMetadata & heroMetad
 
     // Hero's portrait.
     if ( heroMetadata.customPortrait > 0 ) {
-        SetModes( CUSTOM );
-
         assert( isValidId( heroMetadata.customPortrait ) );
 
         // Portrait sprite index.
@@ -669,8 +661,6 @@ void Heroes::applyHeroMetadata( const Maps::Map_Format::HeroMetadata & heroMetad
     const bool doesHeroHaveCustomSecondarySkills
         = std::any_of( heroMetadata.secondarySkill.begin(), heroMetadata.secondarySkill.end(), []( const int32_t skill ) { return skill != 0; } );
     if ( doesHeroHaveCustomSecondarySkills ) {
-        SetModes( CUSTOM );
-
         _secondarySkills = {};
 
         for ( size_t i = 0; i < heroMetadata.secondarySkill.size(); ++i ) {
@@ -688,7 +678,6 @@ void Heroes::applyHeroMetadata( const Maps::Map_Format::HeroMetadata & heroMetad
     }
 
     if ( isEditor || !heroMetadata.customName.empty() ) {
-        SetModes( CUSTOM );
         _name = heroMetadata.customName;
     }
 
@@ -712,8 +701,6 @@ void Heroes::applyHeroMetadata( const Maps::Map_Format::HeroMetadata & heroMetad
     if ( !isEditor ) {
         const int16_t level = heroMetadata.customLevel > -1 ? heroMetadata.customLevel : static_cast<int16_t>( GetLevel() );
         if ( level > 1 ) {
-            SetModes( CUSTOM );
-
             for ( int16_t i = 1; i < level; ++i ) {
                 _levelUp( doesHeroHaveCustomSecondarySkills, true );
             }
@@ -1961,7 +1948,7 @@ void Heroes::Dismiss( const int reason )
     world.getTile( GetIndex() ).setHero( nullptr );
     SetIndex( -1 );
 
-    modes = 0;
+    modes = AVAIL; //解雇的英雄在地图上出现现过，所以状态为可用
 
     _path.Hide();
     _path.Reset();
@@ -1971,7 +1958,7 @@ void Heroes::Dismiss( const int reason )
     SetModes( ACTION );
 
     if ( ( Battle::RESULT_RETREAT | Battle::RESULT_SURRENDER ) & reason ) {
-        SetModes( SAVEMP );
+            SetModes( SAVEMP );
 
         if ( heroColor != PlayerColor::NONE ) {
             kingdom.appendSurrenderedHero( *this );
@@ -2141,7 +2128,7 @@ std::string Heroes::String() const
        << "index sprite    : " << _spriteIndex << std::endl
        << "in castle       : " << ( inCastle() ? "true" : "false" ) << std::endl
        << "save object     : " << MP2::StringObject( world.getTile( GetIndex() ).getMainObjectType( false ) ) << std::endl
-       << "flags           : " << ( Modes( SHIPMASTER ) ? "SHIPMASTER," : "" ) << ( Modes( CUSTOM ) ? "CUSTOM," : "" ) << ( Modes( PATROL ) ? "PATROL" : "" )
+       << "flags           : " << ( Modes( SHIPMASTER ) ? "SHIPMASTER," : "" ) << ( Modes( AVAIL ) ? "AVAIL," : "" ) << ( Modes( PATROL ) ? "PATROL" : "" )
        << std::endl;
 
     if ( Modes( PATROL ) ) {
@@ -2291,33 +2278,14 @@ void AllHeroes::Init()
 
 Heroes * AllHeroes::GetHeroForHire( const int race, const int heroIDToIgnore ) const
 {
-    const std::set<int> customHeroesPortraits = [this]() {
-        std::set<int> result;
-
-        for ( const Heroes * hero : *this ) {
-            assert( hero != nullptr );
-
-            if ( !hero->Modes( Heroes::CUSTOM ) ) {
-                continue;
-            }
-
-            result.insert( hero->getPortraitId() );
-        }
-
-        return result;
-    }();
-
     std::vector<int> heroesForHire;
     heroesForHire.reserve( Heroes::HEROES_COUNT - 2 );
 
-    const auto fillHeroesForHire = [this, heroIDToIgnore, &customHeroesPortraits, &heroesForHire]( const int raceFilter, const bool avoidCustomHeroes ) {
-        const auto [minHeroId, maxHeroId] = getHeroIdRangeForRace( Race::NONE );
-
+    const auto fillHeroesForHire = [this, heroIDToIgnore, &heroesForHire]( const int raceFilter ) {
         for ( const Heroes * hero : *this ) {
             assert( hero != nullptr );
 
-            // Only regular (non-campaign) heroes are available for hire
-            if ( hero->GetID() > maxHeroId ) {
+            if ( !hero->Modes( Heroes::AVAIL ) ) { //只招募可用的英雄
                 continue;
             }
 
@@ -2333,25 +2301,16 @@ Heroes * AllHeroes::GetHeroForHire( const int race, const int heroIDToIgnore ) c
                 continue;
             }
 
-            if ( avoidCustomHeroes && customHeroesPortraits.find( hero->getPortraitId() ) != customHeroesPortraits.end() ) {
-                continue;
-            }
-
             heroesForHire.push_back( hero->GetID() );
         }
     };
 
     // First, try to find a free hero of the specified race (avoiding customized heroes, as well as heroes with non-unique portraits)
-    fillHeroesForHire( race, true );
+    fillHeroesForHire( race );
 
     // If no suitable heroes were found, then try to find a free hero of any race (avoiding customized heroes, as well as heroes with non-unique portraits)
     if ( heroesForHire.empty() && race != Race::NONE ) {
-        fillHeroesForHire( Race::NONE, true );
-    }
-
-    // No suitable heroes were found, any free hero will do
-    if ( heroesForHire.empty() ) {
-        fillHeroesForHire( Race::NONE, false );
+        fillHeroesForHire( Race::NONE );
     }
 
     // All the heroes are busy

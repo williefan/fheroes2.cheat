@@ -208,7 +208,7 @@ public:
         // UNUSED = 0x00000800,
 
         // Hero has non-standard properties that were set using the map editor
-        CUSTOM = 0x00001000,
+        AVAIL = 0x00001000,
         NOTDISMISS = 0x00002000,
         VISIONS = 0x00004000,
         PATROL = 0x00008000
