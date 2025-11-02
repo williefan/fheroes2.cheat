@@ -145,7 +145,7 @@ void Interface::AdventureMap::EventCheatCodeCheck(fheroes2::Key key)
     static fheroes2::Key nextExpectedKey = fheroes2::Key::NONE;
     static int32_t mode = 0;
 
-    if((mode == 8675309 && key == nextExpectedKey) || key == fheroes2::Key::KEY_8) {
+    if((mode == 8675309 && key == nextExpectedKey) || (mode == 0 && key == fheroes2::Key::KEY_8)) {
         mode = 8675309;
         switch(key) {
         case fheroes2::Key::KEY_8: nextExpectedKey = fheroes2::Key::KEY_6; break;
@@ -168,7 +168,7 @@ void Interface::AdventureMap::EventCheatCodeCheck(fheroes2::Key key)
             nextExpectedKey = fheroes2::Key::NONE;
             break;
         }
-    } else if((mode == 32167 && key == nextExpectedKey) || key == fheroes2::Key::KEY_3) {
+    } else if((mode == 32167 && key == nextExpectedKey) || (mode == 0 && key == fheroes2::Key::KEY_3)) {
         mode = 32167;
         switch(key) {
         case fheroes2::Key::KEY_3: nextExpectedKey = fheroes2::Key::KEY_2; break;
@@ -180,6 +180,27 @@ void Interface::AdventureMap::EventCheatCodeCheck(fheroes2::Key key)
                 Heroes * hero = GetFocusHeroes();
                 if ( hero != nullptr ) {
                     hero->GetArmy().JoinTroop( Monster::BLACK_DRAGON, 5, false );
+                    RedrawFocus();
+                }
+            }
+            [[fallthrough]];
+        default:
+            mode = 0;
+            nextExpectedKey = fheroes2::Key::NONE;
+            break;
+        }
+    } else if((mode == 12345 && key == nextExpectedKey) || (mode == 0 && key == fheroes2::Key::KEY_1)) {
+        mode = 12345;
+        switch(key) {
+        case fheroes2::Key::KEY_1: nextExpectedKey = fheroes2::Key::KEY_2; break;
+        case fheroes2::Key::KEY_2: nextExpectedKey = fheroes2::Key::KEY_3; break;
+        case fheroes2::Key::KEY_3: nextExpectedKey = fheroes2::Key::KEY_4; break;
+        case fheroes2::Key::KEY_4: nextExpectedKey = fheroes2::Key::KEY_5; break;
+        case fheroes2::Key::KEY_5:
+            {
+                Heroes * hero = GetFocusHeroes();
+                if ( hero != nullptr ) {
+                    hero->GetArmy().JoinTroop( Monster::GHOST, 5, false );
                     RedrawFocus();
                 }
             }
