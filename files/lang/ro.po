@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fheroes2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-01 23:37+0000\n"
+"POT-Creation-Date: 2025-11-03 12:04+0000\n"
 "PO-Revision-Date: 2022-10-25 08:56+0200\n"
 "Last-Translator: fheroes2 team <fhomm2@gmail.com>\n"
 "Language-Team: \n"
@@ -3066,6 +3066,10 @@ msgid ""
 "Conditions"
 msgstr ""
 
+#, fuzzy
+msgid "Map Description"
+msgstr "Designeri de hărți"
+
 msgid "First select recipients!"
 msgstr ""
 
@@ -3748,11 +3752,9 @@ msgid ""
 "things tougher for the human player."
 msgstr ""
 
-msgid "Selected Description"
-msgstr ""
-
-msgid "The description of the currently selected map."
-msgstr ""
+#, fuzzy
+msgid "Selected Map Description"
+msgstr "Designeri de hărți"
 
 msgid "Jump"
 msgstr "Instant"
@@ -4264,7 +4266,10 @@ msgstr ""
 msgid "Pick player count"
 msgstr ""
 
-msgid "Limit region size"
+msgid "Set water percentage"
+msgstr ""
+
+msgid "Set map seed (set 0 to make the seed random)"
 msgstr ""
 
 #, fuzzy
@@ -4527,6 +4532,9 @@ msgstr ""
 msgid "View the editor system options, which let you customize the editor."
 msgstr ""
 
+msgid "Failed to generate a random map with given parameters."
+msgstr ""
+
 msgid ""
 "Create a new map, either from scratch or using the random map generator."
 msgstr ""
@@ -4534,10 +4542,6 @@ msgstr ""
 #, fuzzy
 msgid "Exit the Editor and return to the game's Main Menu."
 msgstr "Întoarce-te la luptă."
-
-#, fuzzy
-msgid "Warning!"
-msgstr "Atenție"
 
 msgid "From Scratch"
 msgstr ""
@@ -4694,10 +4698,6 @@ msgstr "Dați click pentru a reîncepe bătălia în mod manual."
 msgid "Map Difficulty"
 msgstr "Dificultatea hărții:"
 
-#, fuzzy
-msgid "Map Description"
-msgstr "Designeri de hărți"
-
 msgid "RUMORS"
 msgstr ""
 
@@ -4708,11 +4708,6 @@ msgid "LANGUAGE"
 msgstr ""
 
 msgid "ABOUT"
-msgstr ""
-
-msgid ""
-"The entered map description exceeds the maximum allowed 5 rows. It will be "
-"shortened to fit the map description field."
 msgstr ""
 
 msgid ""
@@ -4930,6 +4925,9 @@ msgid "Delete Answer"
 msgstr ""
 
 msgid "Delete an existing answer for the question."
+msgstr ""
+
+msgid "Riddle"
 msgstr ""
 
 msgid "No artifact will be given as a reward."
@@ -11322,6 +11320,10 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Warning!"
+#~ msgstr "Atenție"
 
 #~ msgid "CONFIG"
 #~ msgstr "CONFIG"
