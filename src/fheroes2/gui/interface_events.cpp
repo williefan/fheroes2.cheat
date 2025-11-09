@@ -74,6 +74,10 @@
 #include "view_world.h"
 #include "world.h"
 
+namespace {
+    std::string cheatCodeBuf;
+}
+
 void Interface::AdventureMap::ShowPathOrStartMoveHero( Heroes * hero, const int32_t destinationIdx )
 {
     if ( hero == nullptr || !Maps::isValidAbsIndex( destinationIdx ) ) {
@@ -139,80 +143,86 @@ void Interface::AdventureMap::EventSwitchFocusedHero( const int32_t tileIndex )
     SetFocus( selectedHero, false );
     RedrawFocus();
 }
-
+/**
+ * Handles cheat code input via number keys.
+ * 
+ * Cheat codes:
+ * - "8675309": Triggers the special in-game event associated with this code.
+ * - "32167": Adds 5 Black Dragons to the currently focused hero's army.
+ * - "12345": Adds 500 Ghosts to the currently focused hero's army.
+ * - "54321": Adds 10,000 Titans to the currently focused hero's army, gives all spells in the spell book,
+ *             sets spell points to 10,000,000, and increases movement points by 10,000,000.
+ * 
+ * @param key The key input representing a number key.
+ * 
+ * Note: The function maintains a buffer of recent key inputs to detect cheat codes. Thoese who want to add new cheat codes
+ * should follow the cheat code rules as following:
+ * - Only number keys (0-9) are considered valid inputs for cheat codes.
+ * - The buffer size is limited to 10 characters to optimize performance and memory usage.
+ * - When a valid cheat code is detected, the corresponding action is executed, and the buffer is cleared.
+ * - If an invalid key is pressed, the buffer is cleared immediately.
+ * 
+ * @see Heroes, World
+ * 
+ * @author Willien Fan
+ * 
+ * 
+ */
 void Interface::AdventureMap::EventCheatCodeCheck(fheroes2::Key key)
 {
-    static fheroes2::Key nextExpectedKey = fheroes2::Key::NONE;
-    static int32_t mode = 0;
-
-    if((mode == 8675309 && key == nextExpectedKey) || (mode == 0 && key == fheroes2::Key::KEY_8)) {
-        mode = 8675309;
-        switch(key) {
-        case fheroes2::Key::KEY_8: nextExpectedKey = fheroes2::Key::KEY_6; break;
-        case fheroes2::Key::KEY_6: nextExpectedKey = fheroes2::Key::KEY_7; break;
-        case fheroes2::Key::KEY_7: nextExpectedKey = fheroes2::Key::KEY_5; break;
-        case fheroes2::Key::KEY_5: nextExpectedKey = fheroes2::Key::KEY_3; break;
-        case fheroes2::Key::KEY_3: nextExpectedKey = fheroes2::Key::KEY_0; break;
-        case fheroes2::Key::KEY_0: nextExpectedKey = fheroes2::Key::KEY_9; break;
-        case fheroes2::Key::KEY_9:
-            {
-                world.ActionFor8675309CheatCode(Settings::Get().CurrentColor());
-                // Fully update fog directions and redraw radar and game area.
-                Interface::GameArea::updateMapFogDirections();
-                Interface::AdventureMap & I = Interface::AdventureMap::Get();
-                I.setRedraw( Interface::REDRAW_GAMEAREA | Interface::REDRAW_RADAR );
-            }
-            [[fallthrough]];
-        default:
-            mode = 0;
-            nextExpectedKey = fheroes2::Key::NONE;
-            break;
+    if(key > fheroes2::Key::KEY_9 || key < fheroes2::Key::KEY_0) {
+        // Reset cheat code input if any other key is pressed
+        cheatCodeBuf.clear();
+        return;
+    }
+    cheatCodeBuf.push_back( static_cast<char>( '0' + ( static_cast<int>( key ) - static_cast<int>( fheroes2::Key::KEY_0 ) ) ) );
+    if(cheatCodeBuf.size() >=7 && cheatCodeBuf.find("8675309") == cheatCodeBuf.size() - 7)  {
+        world.ActionFor8675309CheatCode( Settings::Get().CurrentColor() );
+        // Fully update fog directions and redraw radar and game area.
+        Interface::GameArea::updateMapFogDirections();
+        Interface::AdventureMap & I = Interface::AdventureMap::Get();
+        I.setRedraw( Interface::REDRAW_GAMEAREA | Interface::REDRAW_RADAR );
+        cheatCodeBuf.clear();
+        return;
+    }
+    if(cheatCodeBuf.size() >= 5 && cheatCodeBuf.find("32167") == cheatCodeBuf.size() - 5)  {
+        Heroes * hero = GetFocusHeroes();
+        if ( hero != nullptr ) {
+            hero->GetArmy().JoinTroop( Monster::BLACK_DRAGON, 5, false );
+            RedrawFocus();
         }
-    } else if((mode == 32167 && key == nextExpectedKey) || (mode == 0 && key == fheroes2::Key::KEY_3)) {
-        mode = 32167;
-        switch(key) {
-        case fheroes2::Key::KEY_3: nextExpectedKey = fheroes2::Key::KEY_2; break;
-        case fheroes2::Key::KEY_2: nextExpectedKey = fheroes2::Key::KEY_1; break;
-        case fheroes2::Key::KEY_1: nextExpectedKey = fheroes2::Key::KEY_6; break;
-        case fheroes2::Key::KEY_6: nextExpectedKey = fheroes2::Key::KEY_7; break;
-        case fheroes2::Key::KEY_7:
-            {
-                Heroes * hero = GetFocusHeroes();
-                if ( hero != nullptr ) {
-                    hero->GetArmy().JoinTroop( Monster::BLACK_DRAGON, 5, false );
-                    RedrawFocus();
-                }
-            }
-            [[fallthrough]];
-        default:
-            mode = 0;
-            nextExpectedKey = fheroes2::Key::NONE;
-            break;
+        cheatCodeBuf.clear();
+        return;
+    }
+    if(cheatCodeBuf.size() >= 5 && cheatCodeBuf.find("12345") == cheatCodeBuf.size() - 5)  {
+        Heroes * hero = GetFocusHeroes();
+        if ( hero != nullptr ) {
+            hero->GetArmy().JoinTroop( Monster::GHOST, 500, false );
+            RedrawFocus();
         }
-    } else if((mode == 12345 && key == nextExpectedKey) || (mode == 0 && key == fheroes2::Key::KEY_1)) {
-        mode = 12345;
-        switch(key) {
-        case fheroes2::Key::KEY_1: nextExpectedKey = fheroes2::Key::KEY_2; break;
-        case fheroes2::Key::KEY_2: nextExpectedKey = fheroes2::Key::KEY_3; break;
-        case fheroes2::Key::KEY_3: nextExpectedKey = fheroes2::Key::KEY_4; break;
-        case fheroes2::Key::KEY_4: nextExpectedKey = fheroes2::Key::KEY_5; break;
-        case fheroes2::Key::KEY_5:
-            {
-                Heroes * hero = GetFocusHeroes();
-                if ( hero != nullptr ) {
-                    hero->GetArmy().JoinTroop( Monster::GHOST, 5, false );
-                    RedrawFocus();
-                }
+        cheatCodeBuf.clear();
+        return;
+    }
+    if(cheatCodeBuf.size() >= 5 &&  cheatCodeBuf.find("54321") == cheatCodeBuf.size() - 5)  {
+        Heroes * hero = GetFocusHeroes();
+        if ( hero != nullptr ) {
+            hero->GetArmy().JoinTroop( Monster::TITAN, 10000, false );
+            // This hero has all the spells in his spell book
+            for ( const int spellId : Spell::getAllSpellIdsSuitableForSpellBook() ) {
+                hero->AppendSpellToBook( Spell( spellId ), true );
             }
-            [[fallthrough]];
-        default:
-            mode = 0;
-            nextExpectedKey = fheroes2::Key::NONE;
-            break;
+            hero->SetSpellPoints( 10000000 );
+            hero->IncreaseMovePoints( 10000000 );
+            RedrawFocus();
         }
-    } else {
-        mode = 0;
-        nextExpectedKey = fheroes2::Key::NONE;
+        cheatCodeBuf.clear();
+        return;
+    }
+    if(cheatCodeBuf.size() > 10) {
+        for(size_t i = 0; i < cheatCodeBuf.size() - 1; ++i) {
+            cheatCodeBuf[i] = cheatCodeBuf[i + 1];
+        }
+        cheatCodeBuf.resize(10);
     }
 }
 
