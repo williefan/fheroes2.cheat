@@ -566,7 +566,6 @@ bool World::LoadMapMP2( const std::string & filename, const bool isOriginalMp2Fi
                     // MP2 format stores hero IDs start from 0, while fheroes2 engine starts from 1.
                     if ( pblock[17] && pblock[18] + 1 <= Heroes::JARKONAS ) {
                         hero = vec_heroes.Get( pblock[18] + 1 );
-                        hero->SetModes(Heroes::AVAIL);
                     }
 
                     if ( !hero || !hero->isAvailableForHire() ) {
@@ -604,7 +603,6 @@ bool World::LoadMapMP2( const std::string & filename, const bool isOriginalMp2Fi
                         // MP2 format stores hero IDs start from 0, while fheroes2 engine starts from 1.
                         if ( pblock[17] && pblock[18] + 1 <= Heroes::JARKONAS ) {
                             hero = vec_heroes.Get( pblock[18] + 1 );
-                            hero->SetModes(Heroes::AVAIL);
                         }
 
                         if ( !hero || !hero->isAvailableForHire() ) {

@@ -250,9 +250,7 @@ Heroes::Heroes( const int heroId, const int race )
 {
     _army.Reset( true );
     if(_id > CELIA && _id < DEBUG_HERO) {
-        ResetModes(AVAIL); //对于战役模式英雄，默认不可用，后面load地图时将地图中存在的英雄设为可用
-    } else {
-        SetModes(AVAIL); //普通模式的英雄，默认可用
+        SetModes(ABSENT); //对于战役模式英雄，默认不可用，后面load地图时将地图中存在的英雄设为可用
     } 
 
     // Add to debug hero a lot of stuff.
@@ -420,7 +418,7 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
     // - unused 15 bytes
     //    Always zeros.
 
-    modes = AVAIL; //当地图中存在该英雄时，设为可用
+    modes = 0;
 
     if ( isInJail ) {
         SetModes( JAIL );
@@ -1948,7 +1946,7 @@ void Heroes::Dismiss( const int reason )
     world.getTile( GetIndex() ).setHero( nullptr );
     SetIndex( -1 );
 
-    modes = AVAIL; //解雇的英雄在地图上出现现过，所以状态为可用
+    modes = 0;
 
     _path.Hide();
     _path.Reset();
@@ -1958,7 +1956,7 @@ void Heroes::Dismiss( const int reason )
     SetModes( ACTION );
 
     if ( ( Battle::RESULT_RETREAT | Battle::RESULT_SURRENDER ) & reason ) {
-            SetModes( SAVEMP );
+        SetModes( SAVEMP );
 
         if ( heroColor != PlayerColor::NONE ) {
             kingdom.appendSurrenderedHero( *this );
@@ -2128,7 +2126,7 @@ std::string Heroes::String() const
        << "index sprite    : " << _spriteIndex << std::endl
        << "in castle       : " << ( inCastle() ? "true" : "false" ) << std::endl
        << "save object     : " << MP2::StringObject( world.getTile( GetIndex() ).getMainObjectType( false ) ) << std::endl
-       << "flags           : " << ( Modes( SHIPMASTER ) ? "SHIPMASTER," : "" ) << ( Modes( AVAIL ) ? "AVAIL," : "" ) << ( Modes( PATROL ) ? "PATROL" : "" )
+       << "flags           : " << ( Modes( SHIPMASTER ) ? "SHIPMASTER," : "" ) << ( Modes( ABSENT ) ? "ABSENT," : "" ) << ( Modes( PATROL ) ? "PATROL" : "" )
        << std::endl;
 
     if ( Modes( PATROL ) ) {
@@ -2285,7 +2283,7 @@ Heroes * AllHeroes::GetHeroForHire( const int race, const int heroIDToIgnore ) c
         for ( const Heroes * hero : *this ) {
             assert( hero != nullptr );
 
-            if ( !hero->Modes( Heroes::AVAIL ) ) { //只招募可用的英雄
+            if ( hero->Modes( Heroes::ABSENT ) ) { //只招募可用的英雄
                 continue;
             }
 
