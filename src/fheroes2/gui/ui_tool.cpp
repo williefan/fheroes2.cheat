@@ -72,9 +72,8 @@ namespace
         fheroes2::Image temp{ fadeRoi.width, fadeRoi.height };
         Copy( display, fadeRoi.x, fadeRoi.y, temp, 0, 0, fadeRoi.width, fadeRoi.height );
 
-        double alpha = startAlpha;
+        uint8_t alpha = startAlpha;
         const uint32_t delay = fadeTimeMs / frameCount;
-        const double alphaStep = ( alpha - endAlpha ) / static_cast<double>( frameCount - 1 );
 
         uint32_t frameNumber = 0;
 
@@ -89,25 +88,25 @@ namespace
 
                 assert( alpha >= 0 && alpha <= 255 );
 
-                const uint8_t fadeAlpha = static_cast<uint8_t>( std::round( alpha ) );
-
-                if ( fadeAlpha == 255 ) {
+                if ( alpha == 255 ) {
                     // This alpha is for fully bright image so there is no need to apply alpha.
                     Copy( temp, 0, 0, display, fadeRoi.x, fadeRoi.y, fadeRoi.width, fadeRoi.height );
                 }
-                else if ( fadeAlpha == 0 ) {
+                else if ( alpha == 0 ) {
                     // This alpha is for fully dark image so fill it with the black color.
                     // Color index '0' in all game palettes (including videos) corresponds to the black color.
                     Fill( display, fadeRoi.x, fadeRoi.y, fadeRoi.width, fadeRoi.height, 0 );
                 }
                 else {
-                    ApplyAlpha( temp, 0, 0, display, fadeRoi.x, fadeRoi.y, fadeRoi.width, fadeRoi.height, fadeAlpha );
+                    ApplyAlpha( temp, 0, 0, display, fadeRoi.x, fadeRoi.y, fadeRoi.width, fadeRoi.height, alpha );
                 }
 
                 display.render( fadeRoi );
 
-                alpha -= alphaStep;
                 ++frameNumber;
+                alpha = (endAlpha > startAlpha) ?
+                        startAlpha + (endAlpha - startAlpha)*frameNumber / (frameCount - 1):
+                        startAlpha - (startAlpha - endAlpha)*frameNumber / (frameCount - 1);
             }
         }
     }
