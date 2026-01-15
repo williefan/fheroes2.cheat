@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fheroes2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-10 04:02+0000\n"
-"PO-Revision-Date: 2025-12-05 00:25+0100\n"
+"POT-Creation-Date: 2026-01-03 12:31+0000\n"
+"PO-Revision-Date: 2026-01-04 22:27+0100\n"
 "Last-Translator: Berda Jenő <big4billy@gmail.com>\n"
 "Language-Team: fheroes2 team <fhomm2@gmail.com>\n"
 "Language: hu\n"
@@ -1094,6 +1094,9 @@ msgstr "Ember"
 msgid "AI"
 msgstr "Gép"
 
+msgid "Terrain"
+msgstr "Talaj"
+
 msgid "Start"
 msgstr "Start"
 
@@ -1104,10 +1107,24 @@ msgid "Exit"
 msgstr "Kilép"
 
 msgid "Reset"
-msgstr "Reset"
+msgstr "Alaphelyzetbe állítás"
 
 msgid "Reset to default settings."
 msgstr "Alapbeállítások visszaállítása."
+
+msgid ""
+"The battle will take place on a randomly selected terrain. Click to change "
+"the terrain type."
+msgstr ""
+"A csata véletlenszerűen kiválasztott talajon fog lezajlani. Kattints a "
+"talajtípus megváltoztatásához."
+
+msgid ""
+"The battle will take place on %{terrain-type} terrain. Click to change the "
+"terrain type."
+msgstr ""
+"A csata %{terrain-type} talajon fog lezajlani. Kattints a talajtípus "
+"megváltoztatásához."
 
 msgid "Please select another hero."
 msgstr "Kérlek válassz másik hőst."
@@ -3115,15 +3132,6 @@ msgstr "Nyelv"
 msgid "Graphics"
 msgstr "Grafika"
 
-msgid "Black & White"
-msgstr "Fekete-fehér"
-
-msgid "Mouse Cursor"
-msgstr "Egér kurzor"
-
-msgid "Color"
-msgstr "Szín"
-
 msgid "Text Support"
 msgstr "Szöveg támogatás"
 
@@ -3136,9 +3144,18 @@ msgstr "Játék nyelvének kiválasztása"
 msgid "Change the graphics settings of the game."
 msgstr "Játék grafikai beállításainak módosítása."
 
+msgid "Mouse Cursor"
+msgstr "Egér kurzor"
+
 msgid "Toggle colored cursor on or off. This is only an aesthetic choice."
 msgstr ""
 "Színes kurzor be-/kikapcsolása. Ez csak egy esztétikai jellegű választás."
+
+msgid "Interface Type"
+msgstr "Kezelőfelület típusa"
+
+msgid "Toggle the type of interface you want to use."
+msgstr "Kezelőfelület kívánt típusának kapcsolója."
 
 msgid ""
 "Toggle text support mode to output extra information about windows and "
@@ -3236,6 +3253,15 @@ msgstr ""
 "Rendszer-\n"
 "információk"
 
+msgid "Nearest"
+msgstr "Közelítő"
+
+msgid "Screen Scaling Type"
+msgstr "Képernyő skálázási mód"
+
+msgid "Linear"
+msgstr "Lineáris"
+
 msgid "Change the resolution of the game."
 msgstr "A játék felbontásának megváltoztatása."
 
@@ -3244,6 +3270,17 @@ msgstr "Játék felbontás kiválasztása"
 
 msgid "Toggle between fullscreen and windowed modes."
 msgstr "Váltás teljes képernyős és ablakos mód között."
+
+msgid ""
+"Toggle the type of screen scaling you want to use. Linear scaling makes the "
+"resized screen image blurry while nearest scaling preserves the sharpness of "
+"the original game. The nearest scaling looks best on integer scales, for "
+"example 2.0x or 3.0x."
+msgstr ""
+"Az alkalmazni kívánt képernyőskálázási módok közötti váltás. A lineáris "
+"skálázás az átméretezett képet homályossá teszi, míg a közelítő skálázás "
+"megőrzi az eredeti élességet. A közelítő skálázás néz ki a legjobban egész "
+"számú skálák esetén, mint például 2.0x vagy 3.0x."
 
 msgid ""
 "The V-Sync option can be enabled to resolve flickering issues on some "
@@ -3284,12 +3321,6 @@ msgstr "Szövegesen"
 
 msgid "Numeric"
 msgstr "Számszerűen"
-
-msgid "Interface Type"
-msgstr "Kezelőfelület típusa"
-
-msgid "Toggle the type of interface you want to use."
-msgstr "Kezelőfelület kívánt típusának kapcsolója."
 
 msgid "Toggle interface visibility."
 msgstr "Kezelőfelület láthatóságának kapcsolója."
@@ -3497,7 +3528,7 @@ msgid "rmg|Monster strength"
 msgstr "Lények erőssége"
 
 msgid "rmg|Resource availability"
-msgstr "Erőforrások rendelkezésre állása"
+msgstr "Erőforrások elérhetősége"
 
 msgid "rmg|Map seed"
 msgstr "Térképmag"
@@ -4068,7 +4099,7 @@ msgid "Random Castle Name"
 msgstr "Véletlenszerű vár név"
 
 msgid "Random Town Name"
-msgstr "Véletlenszerű város neve"
+msgstr "Véletlenszerű városnév"
 
 msgid "BANNED SPELLS"
 msgstr "TILTOTT VARÁZSLATOK"
@@ -4746,7 +4777,7 @@ msgid "Exit the Editor and return to the game's Main Menu."
 msgstr "Kilépés a szerkesztőből és visszatérés a játék főmenüjébe."
 
 msgid "From Scratch"
-msgstr "Elölről kezd"
+msgstr "Tiszta lappal kezd"
 
 msgid "Start from scratch with a blank map."
 msgstr "Egy teljesen üres térképpel a legelejéről kezdeni."
@@ -5075,7 +5106,7 @@ msgid "Click to disable all spells."
 msgstr "Kattints az összes varázslat tiltásához."
 
 msgid "Disable All Spells"
-msgstr "Összes varázslatok tiltása"
+msgstr "Összes varázslat tiltása"
 
 msgid "Riddle:"
 msgstr "Találós kérdés:"
@@ -5262,7 +5293,7 @@ msgid "Development"
 msgstr "Fejlesztés"
 
 msgid "Visit us at"
-msgstr "Látogass meg minket itt:"
+msgstr "Látogass meg minket itt"
 
 msgid "QA and Support"
 msgstr "Minőségbiztosítás és támogatás"
@@ -6435,6 +6466,8 @@ msgstr ""
 
 msgid "To exit fheroes2, press the Home button or swipe up."
 msgstr ""
+"Az fheroes2-ből történő kilépéshez nyomd meg a Home gombot vagy felfelé "
+"csúsztass."
 
 msgid "Are you sure you want to quit?"
 msgstr "Biztosan ki szeretnél lépni?"
@@ -6718,6 +6751,12 @@ msgstr "Jó"
 
 msgid "Evil"
 msgstr "Gonosz"
+
+msgid "Black & White"
+msgstr "Fekete-fehér"
+
+msgid "Color"
+msgstr "Szín"
 
 msgid ", FPS: "
 msgstr ", FPS: "
