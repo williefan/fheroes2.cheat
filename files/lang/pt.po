@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fheroes2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-07 09:55+0000\n"
+"POT-Creation-Date: 2026-04-05 13:11+0000\n"
 "PO-Revision-Date: 2026-03-06 18:49-0300\n"
 "Last-Translator: fheroes2 team <fhomm2@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
@@ -20,6 +20,9 @@ msgstr ""
 
 msgid "SELECT"
 msgstr "SELEC."
+
+msgid "ABOUT"
+msgstr "SOBRE"
 
 msgid "S"
 msgstr "P"
@@ -545,11 +548,13 @@ msgstr ""
 "O Fosso interrompe qualquer movimento através dele e reduz a habilidade "
 "dedefesa das tropas presentes nele em %{count}."
 
-msgid "Speed: %{speed}"
+#, fuzzy
+msgid "battleAnimation|Speed: %{speed}"
 msgstr "Velocidade: %{speed}"
 
-msgid "Speed"
-msgstr "Velocidade"
+#, fuzzy
+msgid "battleAnimation|Speed"
+msgstr "Animação"
 
 msgid "Interface"
 msgstr "Aparência"
@@ -1054,6 +1059,12 @@ msgstr "Morrem: %{max}"
 msgid "Perish: %{min} - %{max}"
 msgstr "Morrem: %{min} - %{max}"
 
+msgid "battle_turn_order|Top"
+msgstr ""
+
+msgid "battle_turn_order|Bottom"
+msgstr ""
+
 msgid "Turn Order"
 msgstr "Ordem de Turno"
 
@@ -1115,11 +1126,11 @@ msgstr ""
 msgid "Human"
 msgstr "Humano"
 
-msgid "AI"
-msgstr "IA"
-
 msgid "Terrain"
 msgstr "Terreno"
+
+msgid "Battle Only"
+msgstr "Apenas Batalha"
 
 msgid "Start"
 msgstr "Iniciar"
@@ -1153,11 +1164,17 @@ msgstr ""
 msgid "Please select another hero."
 msgstr "Por favor, selecione outro herói."
 
-msgid "Click to set this hero to be human-controlled."
-msgstr "Clique para definir este herói como controlado por um humano."
+#, fuzzy
+msgid "Click to select a hero."
+msgstr "Clique para selecionar a cor."
 
-msgid "Click to set this hero to be AI-controlled."
-msgstr "Clique para definir este herói como controlado pela IA."
+msgid "Hero"
+msgstr "Herói"
+
+#, fuzzy
+msgid ""
+"If this checkbox is checked, the defending hero is going be human-controlled."
+msgstr "Clique para definir este herói como controlado por um humano."
 
 msgid "%{race1} %{name1} vs %{race2} %{name2}"
 msgstr "%{race1} %{name1} vs %{race2} %{name2}"
@@ -2935,6 +2952,9 @@ msgstr "Dano"
 msgid "HP"
 msgstr "PV"
 
+msgid "Speed"
+msgstr "Velocidade"
+
 msgid "Growth"
 msgstr "Produção"
 
@@ -3236,6 +3256,13 @@ msgstr ""
 "Condições\n"
 "de\n"
 "Derrota"
+
+msgid "About"
+msgstr "Sobre"
+
+#, fuzzy
+msgid "Click to read notes from the map creator."
+msgstr "Clique para retornar ao menu principal."
 
 msgid "Map Description"
 msgstr "Descrição do Mapa"
@@ -3761,6 +3788,10 @@ msgstr "Selecionar Herói:"
 
 msgid "Select Monsters:"
 msgstr "Selecionar Monstros:"
+
+#, fuzzy
+msgid "Select Artifacts:"
+msgstr "Selecionar Artefato:"
 
 msgid "race|Random"
 msgstr "Aleatória"
@@ -4991,17 +5022,11 @@ msgstr "EVENTOS"
 msgid "LANGUAGE"
 msgstr "IDIOMA"
 
-msgid "ABOUT"
-msgstr "SOBRE"
-
 msgid "Change Map Name"
 msgstr "Alterar o Nome do Mapa"
 
 msgid "Change Map Description"
 msgstr "Alterar Descrição do Mapa"
-
-msgid "About"
-msgstr "Sobre"
 
 msgid "Click to edit custom rumors."
 msgstr "Clique para editar rumores personalizados."
@@ -5642,6 +5667,10 @@ msgstr "gerar novo mapa aleatório"
 msgid "hotkey|re-configure random map"
 msgstr "reconfigurar mapa aleatório"
 
+#, fuzzy
+msgid "hotkey|output all text"
+msgstr "rolar para a esquerda"
+
 msgid "hotkey|roland campaign"
 msgstr "campanha de Roland"
 
@@ -6060,9 +6089,6 @@ msgid ""
 msgstr ""
 "Um jogo multijogador, com vários jogadores humanos competindo entre si em um "
 "único mapa."
-
-msgid "Battle Only"
-msgstr "Apenas Batalha"
 
 msgid "Setup and play a battle without loading any map."
 msgstr "Configure e jogue uma batalha sem carregar nenhum mapa."
@@ -6727,14 +6753,59 @@ msgstr ""
 msgid "The available values range from %{min} to %{max}."
 msgstr "Os valores disponíveis variam de %{min} a %{max}."
 
+msgid "Uppercase"
+msgstr ""
+
+#, fuzzy
+msgid "Click to switch to uppercase letters."
+msgstr "Clique para salvar as propriedades do Evento."
+
 msgid "Keyboard|123"
 msgstr "123"
+
+#, fuzzy
+msgid "Keyboard type"
+msgstr "123"
+
+msgid "Click to switch between keyboard types."
+msgstr ""
 
 msgid "Keyboard|SPACE"
 msgstr "ESPAÇO"
 
+#, fuzzy
+msgid "Change language"
+msgstr "Alterar o Nome do Mapa"
+
+#, fuzzy
+msgid "Click to switch between languages."
+msgstr "Clique para escolher o idioma selecionado."
+
+#, fuzzy
+msgid "Backspace"
+msgstr "Voltar"
+
+#, fuzzy
+msgid "Click to remove characters."
+msgstr "Clique para sair dos resultados da batalha."
+
+#, fuzzy
+msgid "Lowercase"
+msgstr "Flores"
+
+#, fuzzy
+msgid "Click to switch to lowercase letters."
+msgstr "Clique para salvar as propriedades do Evento."
+
 msgid "Keyboard|ABC"
 msgstr "ABC"
+
+#, fuzzy
+msgid "Swap sign"
+msgstr "Designers de Mapa"
+
+msgid "Click to switch between signed and unsigned numbers."
+msgstr ""
 
 msgid "The entered value is invalid."
 msgstr "O valor inserido é inválido."
@@ -8462,13 +8533,13 @@ msgstr "Somente os heróis podem lançar este feitiço."
 msgid "This hero is not able to cast adventure spells."
 msgstr "Esse herói não é capaz de lançar feitiços de aventura."
 
+msgid "This spell cannot be cast on a boat."
+msgstr "Esse feitiço não pode ser lançado em um barco."
+
 msgid "Your hero is too tired to cast this spell today. Try again tomorrow."
 msgstr ""
 "Seu herói está muito cansado para lançar este feitiço hoje. Tente novamente "
 "amanhã."
-
-msgid "This spell cannot be cast on a boat."
-msgstr "Esse feitiço não pode ser lançado em um barco."
 
 msgid "This spell can only be cast near an ocean."
 msgstr "Esse feitiço só pode ser lançado perto de um oceano."
@@ -9727,9 +9798,6 @@ msgstr "Monstro Aleatório - Forte"
 
 msgid "Random Monster - very strong"
 msgstr "Monstro Aleatório - Muito Forte"
-
-msgid "Hero"
-msgstr "Herói"
 
 msgid "Nothing Special"
 msgstr "Nada Especial"
@@ -12714,11 +12782,8 @@ msgstr ""
 msgid "An unknown force is being resurrected..."
 msgstr "Uma força misteriosa está ressuscitando..."
 
-#~ msgid ""
-#~ "You are about to change the map's language from %{oldLanguage} to "
-#~ "%{newLanguage}. Some texts might not be displayed properly after this. Do "
-#~ "you want to proceed?"
-#~ msgstr ""
-#~ "Você está prestes a alterar o idioma do mapa de %{oldLanguage} para "
-#~ "%{newLanguage}. Alguns textos podem não ser exibidos corretamente depois "
-#~ "disso. Deseja prosseguir?"
+#~ msgid "AI"
+#~ msgstr "IA"
+
+#~ msgid "Click to set this hero to be AI-controlled."
+#~ msgstr "Clique para definir este herói como controlado pela IA."
