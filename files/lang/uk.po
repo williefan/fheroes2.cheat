@@ -1,13 +1,13 @@
 # Ukrainian translation of fheroes2
-# Copyright (C) 2022 fheroes2 team <fhomm2@gmail.com>
+# Copyright (C) 2022 - 2026 fheroes2 team <fhomm2@gmail.com>
 # This file is distributed under the same license as the fheroes2 package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fheroes2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 13:11+0000\n"
-"PO-Revision-Date: 2026-01-31 15:48+0200\n"
+"POT-Creation-Date: 2026-05-07 14:55+0000\n"
+"PO-Revision-Date: 2026-05-16 09:20+0300\n"
 "Last-Translator: fheroes2 team <fhomm2@gmail.com>\n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -502,8 +502,8 @@ msgstr "Не вдалось перемістити останній загін"
 msgid "Move the %{name}"
 msgstr "Перемістити %{name}"
 
-msgid "Set %{monster} Count"
-msgstr "Задати кількість %{monster}"
+msgid "Set %{monster} Count:"
+msgstr "Задати кількість %{monster}:"
 
 msgid "%{name} destroys half the enemy troops!"
 msgid_plural "%{name} destroy half the enemy troops!"
@@ -1077,10 +1077,10 @@ msgid "Perish: %{min} - %{max}"
 msgstr "Загине %{min} - %{max}"
 
 msgid "battle_turn_order|Top"
-msgstr ""
+msgstr "Вгорі"
 
 msgid "battle_turn_order|Bottom"
-msgstr ""
+msgstr "Внизу"
 
 msgid "Turn Order"
 msgstr "Порядок ходів"
@@ -1131,7 +1131,7 @@ msgid ""
 msgstr "Перемкнути затінення клітини, на яку наведений курсор миші."
 
 msgid "Toggle showing the movement area of a highlighted creature on or off."
-msgstr ""
+msgstr "Увімкнути або вимкнути відображення зони руху виділеної істоти."
 
 msgid ""
 "Through eagle-eyed observation, %{name} is able to learn the magic spell "
@@ -3556,23 +3556,23 @@ msgstr "Незвідана територія"
 msgid "Random Map Generator"
 msgstr "Генератор випадкових мап"
 
-msgid "rmg|Player count"
-msgstr "Кількість гравців"
+msgid "rmg|Player count:"
+msgstr "Кількість гравців:"
 
-msgid "rmg|Map layout"
-msgstr "Розкладка мапи"
+msgid "rmg|Map layout:"
+msgstr "Розкладка мапи:"
 
-msgid "rmg|Water percentage"
-msgstr "Відсоток води"
+msgid "rmg|Water percentage:"
+msgstr "Відсоток води:"
 
-msgid "rmg|Monster strength"
-msgstr "Сила монстрів"
+msgid "rmg|Monster strength:"
+msgstr "Сила монстрів:"
 
-msgid "rmg|Resource availability"
-msgstr "Доступність ресурсів"
+msgid "rmg|Resource availability:"
+msgstr "Доступність ресурсів:"
 
-msgid "rmg|Map seed"
-msgstr "Варіація мапи"
+msgid "rmg|Map seed:"
+msgstr "Варіація мапи:"
 
 msgid "Click to generate a new map."
 msgstr "Тицьніть, щоб згенерувати нову мапу."
@@ -3797,8 +3797,8 @@ msgstr "Оберіть скарб:"
 msgid "Select Ocean Object:"
 msgstr "Оберіть об'єкти океану:"
 
-msgid "Castle/town placing"
-msgstr "Розміщення замку/міста"
+msgid "Castle/town placing:"
+msgstr "Розміщення замку/міста:"
 
 msgid "doubleLinedRace|Neutral"
 msgstr "Нейтральний"
@@ -3830,8 +3830,8 @@ msgstr "Оберіть помешкання:"
 msgid "Select Landscape Object:"
 msgstr "Вибрати об'єкт місцевості:"
 
-msgid "Mine placing"
-msgstr "Розміщення шахти"
+msgid "Mine placing:"
+msgstr "Розміщення шахти:"
 
 msgid ""
 "Resource\n"
@@ -3862,8 +3862,8 @@ msgstr "Виберіть об'єкт підсилювач:"
 msgid "Select Adventure Object:"
 msgstr "Виберіть пригодницький об'єкт:"
 
-msgid "Select color"
-msgstr "Виберіть колір"
+msgid "Select color:"
+msgstr "Виберіть колір:"
 
 msgid "Players Icon"
 msgstr "Кількість гравців"
@@ -4178,11 +4178,14 @@ msgstr "Гарнізон замку"
 msgid "Town Army"
 msgstr "Гарнізон міста"
 
+msgid "You have unsaved changes. Do you wish to proceed?"
+msgstr "Ви маєте незбережені зміни. Бажаєте продовжити?"
+
 msgid "Click to change the Castle name."
 msgstr "Тицьніть, щоб змінити назву замку."
 
-msgid "Enter Castle name"
-msgstr "Ввести назву замку"
+msgid "Enter Castle name:"
+msgstr "Ввести назву замку:"
 
 msgid "Reset the Castle name."
 msgstr "Скинути назву замку."
@@ -4257,6 +4260,9 @@ msgstr ""
 "Якщо цей прапорець встановлено, ця подія спрацює для %{color} гравця, якщо "
 "ним керує комп'ютер."
 
+msgid "Set %{resource-type} Count:"
+msgstr "Задати кількість %{resource-type}:"
+
 msgid "Message:"
 msgstr "Повідомлення:"
 
@@ -4281,8 +4287,8 @@ msgstr "Текст повідомлення події"
 msgid "Day: %{day}"
 msgstr "День: %{day}"
 
-msgid "Daily Events"
-msgstr "Щоденні події"
+msgid "Daily events:"
+msgstr "Щоденні події:"
 
 msgid "Click to save the events."
 msgstr "Тицьніть, щоб зберегти події."
@@ -4317,8 +4323,8 @@ msgstr "Скасувати подію після першого відвідув
 msgid "Computer colors allowed to get the event:"
 msgstr "Кольори гравців-комп'ютерів, яким дозволено отримати подію:"
 
-msgid "Set Experience value"
-msgstr "Задати кількість досвіду"
+msgid "Set Experience value:"
+msgstr "Задати кількість досвіду:"
 
 msgid "Artifact"
 msgstr "Артефакт"
@@ -4375,8 +4381,8 @@ msgstr ""
 msgid "%{objects} must be placed on water."
 msgstr "%{objects} мусять бути розміщені на воді."
 
-msgid "Objects cannot be placed outside the map."
-msgstr "Неможливо розмістити об'єкт поза мапою."
+msgid "Action objects cannot be placed outside the map."
+msgstr "Неможливо розмістити об'єкти дії поза мапою."
 
 msgid "Action objects must be placed on clear tiles."
 msgstr "Об'єкти дії мають бути розміщені на чистому просторі."
@@ -4482,11 +4488,11 @@ msgstr "Повернутися до головного меню."
 msgid "Leave the Editor and play the map in the Standard Game mode."
 msgstr "Вийти з редактора і грати на мапі в режимі Стандартної Гри."
 
-msgid "Input %{object} text"
-msgstr "Ввести %{object} текст"
+msgid "Input %{object} text:"
+msgstr "Ввести %{object} текст:"
 
-msgid "Set Random Ultimate Artifact Radius"
-msgstr "Встановити радіус випадкового Легендарного Артефакту"
+msgid "Set Random Ultimate Artifact Radius:"
+msgstr "Встановити радіус випадкового Легендарного Артефакту:"
 
 msgid "%{object} has no properties to change."
 msgstr "%{object} не має властивостей, які можна змінити."
@@ -4525,6 +4531,9 @@ msgstr "На мапі можна розмістити лише один випа
 msgid "A maximum of %{count} obelisks can be placed on the map."
 msgstr "На мапі можна розмістити максимум %{count} обелісків."
 
+msgid "The same object exists on the tile."
+msgstr "Цей самий об'єкт є на плитці."
+
 msgid "The map is corrupted."
 msgstr "Мапа пошкоджена."
 
@@ -4561,13 +4570,6 @@ msgid ""
 "Click here to\n"
 "select another monster."
 msgstr "Тицьніть сюди щоб вибрати іншого монстра."
-
-msgid ""
-"Cell\n"
-"Details"
-msgstr ""
-"Стільник\n"
-"Деталі"
 
 msgid "Erase"
 msgstr "Стерти"
@@ -4608,8 +4610,26 @@ msgstr "Герої"
 msgid "Towns"
 msgstr "Міста"
 
-msgid "editorErasure|Landscape objects"
-msgstr "Ландшафтні об'єкти"
+msgid "editorDetailMode|Edit"
+msgstr "Редагувати"
+
+msgid "editorDetailMode|Move"
+msgstr "Перемістити"
+
+msgid "editorDetailMode|Copy"
+msgstr "Копіювати"
+
+msgid "editorErasure|Mountains"
+msgstr "Гори"
+
+msgid "editorErasure|Rocks"
+msgstr "Скелі"
+
+msgid "editorErasure|Trees"
+msgstr "Дерева"
+
+msgid "editorErasure|Miscellaneous and Water landscape objects"
+msgstr "Різне та об'єкти водного ландшафту"
 
 msgid "editorErasure|Adventure non pickable objects"
 msgstr "Пригодницькі статичні об'єкти"
@@ -4680,6 +4700,15 @@ msgstr "Прохідний тільки на човні."
 msgid "No special modifiers."
 msgstr "Ніяких спеціальних модифікаторів."
 
+msgid "Edit objects on the Adventure Map."
+msgstr "Редагувати об’єкти на мапі пригод."
+
+msgid "Move objects on the Adventure Map."
+msgstr "Переміщати об’єкти на мапі пригод."
+
+msgid "Copy objects on the Adventure Map."
+msgstr "Копіювати об’єкти на мапі пригод."
+
 msgid "Toggle the erasure of %{type} objects."
 msgstr "Видалити %{type}."
 
@@ -4720,8 +4749,8 @@ msgstr ""
 msgid "Detail Mode"
 msgstr "Деталізація"
 
-msgid "Used for special editing of action objects."
-msgstr "Використовується для спеціального редагування об'єктів дії."
+msgid "Used for moving or customizing objects."
+msgstr "Використовується для переміщення або редагування об'єктів."
 
 msgid "Adventure Objects Mode"
 msgstr "Пригодницькі об'єкти"
@@ -4804,8 +4833,8 @@ msgstr ""
 "Перегляд системних параметрів редактора, за допомогою яких ви можете "
 "налаштувати редактор."
 
-msgid "Supported languages"
-msgstr "Підтримувані мови"
+msgid "Supported languages:"
+msgstr "Підтримувані мови:"
 
 msgid "Language"
 msgstr "Мова"
@@ -4997,11 +5026,17 @@ msgstr "ПОДІЇ"
 msgid "LANGUAGE"
 msgstr "МОВА"
 
-msgid "Change Map Name"
-msgstr "Змінити назву мапи"
+msgid "map|ABOUT"
+msgstr "ПРО МАПУ"
 
-msgid "Change Map Description"
-msgstr "Змінити опис мапи"
+msgid "Change Map Name:"
+msgstr "Змінити назву мапи:"
+
+msgid "Change Map Description:"
+msgstr "Змінити опис мапи:"
+
+msgid "map|About"
+msgstr "Опис"
 
 msgid "Click to edit custom rumors."
 msgstr "Тицьніть, щоб редагувати власні чутки."
@@ -5076,6 +5111,9 @@ msgstr "Анімації об'єктів умівк/вимк."
 
 msgid "Toggle display of objects' passability."
 msgstr "Відображення прохідності об'єктів увімк/вимк."
+
+msgid "Rumors:"
+msgstr "Чутки:"
 
 msgid "Rumor:"
 msgstr "Чутка:"
@@ -5367,8 +5405,8 @@ msgstr "Розробка та підтримка"
 msgid "Special Thanks to"
 msgstr "Особлива подяка"
 
-msgid "and many-many other contributors and supporters!"
-msgstr "та багато-багато інших дописувачів і підтримувачів!"
+msgid "and all the people who have helped make the project possible!"
+msgstr "а також усім, хто допоміг втілити цей проект у життя!"
 
 msgid "Support us at"
 msgstr "Підтримайте нас нас "
@@ -5502,6 +5540,13 @@ msgstr "Дизайнери мап"
 msgid "Package Design"
 msgstr "Дизайн упаковки"
 
+msgid "To exit fheroes2, press the Home button or swipe up."
+msgstr ""
+"Щоб вийти з fheroes2, натисніть кнопку «Додому» або проведіть пальцем вгору."
+
+msgid "Are you sure you want to quit?"
+msgstr "Ви впевнені, що хочете вийти?"
+
 msgid "High Scores"
 msgstr "Рекорди"
 
@@ -5550,6 +5595,9 @@ msgstr "текстовий опис увімк/вимк"
 msgid "hotkey|toggle developer mode"
 msgstr "режим розробника увімк/вимк"
 
+msgid "hotkey|quit"
+msgstr "вийти"
+
 msgid "hotkey|new game"
 msgstr "нова гра"
 
@@ -5573,9 +5621,6 @@ msgstr "багатокористувацька гра"
 
 msgid "hotkey|settings"
 msgstr "налаштування"
-
-msgid "hotkey|quit"
-msgstr "вийти"
 
 msgid "hotkey|select map"
 msgstr "вибрати мапу"
@@ -5860,6 +5905,12 @@ msgstr "екран будівництва"
 
 msgid "hotkey|buy all monsters in well"
 msgstr "придбати усіх монстрів у колодязі"
+
+msgid "hotkey|merge troops with hero"
+msgstr "об'єднати війська з героєм"
+
+msgid "hotkey|merge troops with garrison"
+msgstr "об'єднати війська з гарнізоном"
 
 msgid "hotkey|split stack by half"
 msgstr "розділити загін навпіл"
@@ -6547,13 +6598,6 @@ msgstr ""
 "Один або кілька героїв все ще можуть рухатися. Ви впевнені, що хочете "
 "завершити свій хід?"
 
-msgid "To exit fheroes2, press the Home button or swipe up."
-msgstr ""
-"Щоб вийти з fheroes2, натисніть кнопку «Додому» або проведіть пальцем вгору."
-
-msgid "Are you sure you want to quit?"
-msgstr "Ви впевнені, що хочете вийти?"
-
 msgid "Are you sure you want to restart? (Your current game will be lost.)"
 msgstr "Ви впевнені, що хочете перезапустити гру? (Поточну гру буде втрачено)."
 
@@ -6703,8 +6747,8 @@ msgstr ""
 "Значення\n"
 "як усталено"
 
-msgid "Set %{skill} Skill"
-msgstr "Встановити навичку %{skill}"
+msgid "Set %{skill} Skill:"
+msgstr "Встановити навичку %{skill}:"
 
 msgid "Set %{skill} base value. Right-click to reset all skills to default."
 msgstr ""
@@ -6725,7 +6769,7 @@ msgid "The available values range from %{min} to %{max}."
 msgstr "Доступні значення знаходяться в діапазоні від %{min} до %{max}."
 
 msgid "Uppercase"
-msgstr ""
+msgstr "Великі літери"
 
 msgid "Click to switch to uppercase letters."
 msgstr "Тицьніть, щоб перейти до великих літер."
@@ -6737,7 +6781,7 @@ msgid "Keyboard type"
 msgstr "Тип клавіатури"
 
 msgid "Click to switch between keyboard types."
-msgstr ""
+msgstr "Тицьніть, щоб перемикатися між типами клавіатури."
 
 msgid "Keyboard|SPACE"
 msgstr "ПРОБІЛ"
@@ -6767,7 +6811,7 @@ msgid "Swap sign"
 msgstr "Змінити знак"
 
 msgid "Click to switch between signed and unsigned numbers."
-msgstr ""
+msgstr "Тицьніть, щоб переключитися між підписаними та непідписаними числами."
 
 msgid "The entered value is invalid."
 msgstr "Введене значення недійсне."
@@ -6855,6 +6899,9 @@ msgid "Vietnamese"
 msgstr ""
 
 msgid "Greek"
+msgstr ""
+
+msgid "Esperanto"
 msgstr ""
 
 msgid "Slow"
@@ -8594,17 +8641,17 @@ msgstr ""
 "Змінити значення очок заклинань. Тицьніть правою кнопкою миші, щоб відновити "
 "значення як усталено."
 
-msgid "Set Spell Points value"
-msgstr "Задати кількість очок мани"
+msgid "Set Spell Points value:"
+msgstr "Задати кількість очок мани:"
 
 msgid "View Spell Points Info"
 msgstr "Переглянути інформацію про очки магії"
 
-msgid "Set patrol radius in tiles"
-msgstr "Встановити радіус патрулювання в стільниках"
+msgid "Set patrol radius in tiles:"
+msgstr "Встановити радіус патрулювання в стільниках:"
 
-msgid "Enter hero's name"
-msgstr "Ввести ім'я героя"
+msgid "Enter hero's name:"
+msgstr "Ввести ім'я героя:"
 
 msgid "Click to change class."
 msgstr "Тицьніть, щоб змінити клас."
@@ -8682,6 +8729,9 @@ msgstr ""
 
 msgid "Click to enable hero's patrol mode."
 msgstr "Тицьніть для увімкнення патрулювання героєм."
+
+msgid "Do you want to save the changes made?"
+msgstr "Ви хочете зберегти внесені зміни?"
 
 msgid "Blood Morale"
 msgstr "Кровожерлива мораль"
@@ -12672,6 +12722,16 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "Невідома сила постає знов..."
+
+#~ msgid ""
+#~ "Cell\n"
+#~ "Details"
+#~ msgstr ""
+#~ "Стільник\n"
+#~ "Деталі"
+
+#~ msgid "and many-many other contributors and supporters!"
+#~ msgstr "та багато-багато інших дописувачів і підтримувачів!"
 
 #~ msgid "AI"
 #~ msgstr "Комп'ютер"

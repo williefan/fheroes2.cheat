@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fheroes2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 13:11+0000\n"
+"POT-Creation-Date: 2026-05-07 14:55+0000\n"
 "PO-Revision-Date: 2025-04-19 17:45+0200\n"
 "Last-Translator: fheroes2 team <fhomm2@gmail.com>\n"
 "Language-Team: Danish (Denmark)\n"
@@ -491,7 +491,8 @@ msgstr "Sidste trop kan ikke flyttes"
 msgid "Move the %{name}"
 msgstr "Flyt %{name}"
 
-msgid "Set %{monster} Count"
+#, fuzzy
+msgid "Set %{monster} Count:"
 msgstr "Indstil antal %{monster}"
 
 msgid "%{name} destroys half the enemy troops!"
@@ -3606,24 +3607,25 @@ msgid "Random Map Generator"
 msgstr "Tilfældigt væsen"
 
 #, fuzzy
-msgid "rmg|Player count"
+msgid "rmg|Player count:"
 msgstr "Spiller-ikon"
 
-msgid "rmg|Map layout"
-msgstr ""
+#, fuzzy
+msgid "rmg|Map layout:"
+msgstr "Spiller-ikon"
 
 #, fuzzy
-msgid "rmg|Water percentage"
+msgid "rmg|Water percentage:"
 msgstr "Vand-elemental"
 
 #, fuzzy
-msgid "rmg|Monster strength"
+msgid "rmg|Monster strength:"
 msgstr "Tilfældigt væsen - stærk"
 
-msgid "rmg|Resource availability"
+msgid "rmg|Resource availability:"
 msgstr ""
 
-msgid "rmg|Map seed"
+msgid "rmg|Map seed:"
 msgstr ""
 
 #, fuzzy
@@ -3859,7 +3861,8 @@ msgstr "Vælg skat:"
 msgid "Select Ocean Object:"
 msgstr "Vælg hav-objekt:"
 
-msgid "Castle/town placing"
+#, fuzzy
+msgid "Castle/town placing:"
 msgstr "Borg/by-vindue"
 
 msgid "doubleLinedRace|Neutral"
@@ -3892,7 +3895,8 @@ msgstr "Vælg Bosted:"
 msgid "Select Landscape Object:"
 msgstr "Vælg Landskab-objekt:"
 
-msgid "Mine placing"
+#, fuzzy
+msgid "Mine placing:"
 msgstr "Mine-placering"
 
 msgid ""
@@ -3927,7 +3931,8 @@ msgstr "Vælg Power Up-objekt:"
 msgid "Select Adventure Object:"
 msgstr "Vælg Eventyr-objekt:"
 
-msgid "Select color"
+#, fuzzy
+msgid "Select color:"
 msgstr "Vælg farve"
 
 msgid "Players Icon"
@@ -4246,10 +4251,15 @@ msgstr "Borghær"
 msgid "Town Army"
 msgstr "Byhær"
 
+#, fuzzy
+msgid "You have unsaved changes. Do you wish to proceed?"
+msgstr "Hvor mange væsener ønsker du at flytte?"
+
 msgid "Click to change the Castle name."
 msgstr "Klik for at ændre borgnavn."
 
-msgid "Enter Castle name"
+#, fuzzy
+msgid "Enter Castle name:"
 msgstr "Skriv borgnavn"
 
 msgid "Reset the Castle name."
@@ -4325,6 +4335,10 @@ msgstr ""
 "Hvis dette felt er aktiveret, vil denne begivenhed udløses for %{color} "
 "computerspiller."
 
+#, fuzzy
+msgid "Set %{resource-type} Count:"
+msgstr "Bestem antal af %{resource-type}"
+
 msgid "Message:"
 msgstr "Besked:"
 
@@ -4349,7 +4363,8 @@ msgstr "Tekst til begivenhedsmeddelelse"
 msgid "Day: %{day}"
 msgstr "Dag: %{day}"
 
-msgid "Daily Events"
+#, fuzzy
+msgid "Daily events:"
 msgstr "Daglige begivenheder"
 
 msgid "Click to save the events."
@@ -4385,7 +4400,8 @@ msgstr "Aflys begivenheden efter første besøg"
 msgid "Computer colors allowed to get the event:"
 msgstr "Computerfarver er tilladt for at få begivenheden:"
 
-msgid "Set Experience value"
+#, fuzzy
+msgid "Set Experience value:"
 msgstr "Indstil erfaringspoint"
 
 msgid "Artifact"
@@ -4443,7 +4459,8 @@ msgstr ""
 msgid "%{objects} must be placed on water."
 msgstr "%{objects} må kun placeres på vand."
 
-msgid "Objects cannot be placed outside the map."
+#, fuzzy
+msgid "Action objects cannot be placed outside the map."
 msgstr "Objekter kan ikke placeres udenfor kortet."
 
 msgid "Action objects must be placed on clear tiles."
@@ -4550,10 +4567,12 @@ msgstr "Vend tilbage til spillets hovedmenu."
 msgid "Leave the Editor and play the map in the Standard Game mode."
 msgstr "Forlad editoren og spil kortet i Enkeltspiller-tilstand."
 
-msgid "Input %{object} text"
+#, fuzzy
+msgid "Input %{object} text:"
 msgstr "Indtast tekst til %{object}"
 
-msgid "Set Random Ultimate Artifact Radius"
+#, fuzzy
+msgid "Set Random Ultimate Artifact Radius:"
 msgstr "Indstil radius: Tilfældigt Ultimativt Artefakt"
 
 msgid "%{object} has no properties to change."
@@ -4593,6 +4612,10 @@ msgstr "Kun et tilfældigt artefakt kan placeres på kortet."
 
 msgid "A maximum of %{count} obelisks can be placed on the map."
 msgstr "Der kan maksimalt placeres %{count} obelisker på kortet."
+
+#, fuzzy
+msgid "The same object exists on the tile."
+msgstr "Dette svar findes allerede på listen."
 
 msgid "The map is corrupted."
 msgstr "Kortet er beskadiget."
@@ -4635,13 +4658,6 @@ msgstr ""
 "Klik her, for at\n"
 "vælge et andet væsen."
 
-msgid ""
-"Cell\n"
-"Details"
-msgstr ""
-"Celle-\n"
-"detaljer"
-
 msgid "Erase"
 msgstr "Viskelæder"
 
@@ -4681,7 +4697,32 @@ msgstr "Helte"
 msgid "Towns"
 msgstr "Byer"
 
-msgid "editorErasure|Landscape objects"
+#, fuzzy
+msgid "editorDetailMode|Edit"
+msgstr "Detalje-tilstand"
+
+#, fuzzy
+msgid "editorDetailMode|Move"
+msgstr "Detalje-tilstand"
+
+#, fuzzy
+msgid "editorDetailMode|Copy"
+msgstr "Detalje-tilstand"
+
+#, fuzzy
+msgid "editorErasure|Mountains"
+msgstr "Væsener"
+
+#, fuzzy
+msgid "editorErasure|Rocks"
+msgstr "Veje"
+
+#, fuzzy
+msgid "editorErasure|Trees"
+msgstr "Helte"
+
+#, fuzzy
+msgid "editorErasure|Miscellaneous and Water landscape objects"
 msgstr "Landskabsobjekter"
 
 msgid "editorErasure|Adventure non pickable objects"
@@ -4755,6 +4796,15 @@ msgstr "Farbar kun ved sejlads."
 msgid "No special modifiers."
 msgstr "Ingen særlige påvirkninger."
 
+msgid "Edit objects on the Adventure Map."
+msgstr ""
+
+msgid "Move objects on the Adventure Map."
+msgstr ""
+
+msgid "Copy objects on the Adventure Map."
+msgstr ""
+
 msgid "Toggle the erasure of %{type} objects."
 msgstr "Vælg sletning af %{type}objekter til og fra."
 
@@ -4795,7 +4845,8 @@ msgstr ""
 msgid "Detail Mode"
 msgstr "Detalje-tilstand"
 
-msgid "Used for special editing of action objects."
+#, fuzzy
+msgid "Used for moving or customizing objects."
 msgstr "Bruges til speciel redigering af handlingsobjekter."
 
 msgid "Adventure Objects Mode"
@@ -4877,7 +4928,7 @@ msgid "View the editor system options, which let you customize the editor."
 msgstr "Vis korteditorens systemindstillinger, som lader dig tilpasse den."
 
 #, fuzzy
-msgid "Supported languages"
+msgid "Supported languages:"
 msgstr "Støt os på"
 
 msgid "Language"
@@ -5069,11 +5120,21 @@ msgstr "BEGIVENHEDER"
 msgid "LANGUAGE"
 msgstr "SPROG"
 
-msgid "Change Map Name"
+#, fuzzy
+msgid "map|ABOUT"
+msgstr "OM"
+
+#, fuzzy
+msgid "Change Map Name:"
 msgstr "Skift kortnavn"
 
-msgid "Change Map Description"
+#, fuzzy
+msgid "Change Map Description:"
 msgstr "Skift kortbeskrivelse"
+
+#, fuzzy
+msgid "map|About"
+msgstr "Om"
 
 msgid "Click to edit custom rumors."
 msgstr "Klik for at redigere tilpassede rygter."
@@ -5148,6 +5209,10 @@ msgstr "Slå animation af objekterne til eller fra."
 
 msgid "Toggle display of objects' passability."
 msgstr "Slå visning af objekters fremkommelighed til eller fra."
+
+#, fuzzy
+msgid "Rumors:"
+msgstr "Rygter"
 
 msgid "Rumor:"
 msgstr "Rygte:"
@@ -5447,8 +5512,8 @@ msgstr "Udv. og support"
 msgid "Special Thanks to"
 msgstr "Særlig tak til"
 
-msgid "and many-many other contributors and supporters!"
-msgstr "og mange-mange andre bidragydere og tilhængere!"
+msgid "and all the people who have helped make the project possible!"
+msgstr ""
 
 msgid "Support us at"
 msgstr "Støt os på"
@@ -5582,6 +5647,12 @@ msgstr "Kortdesignere"
 msgid "Package Design"
 msgstr "Pakkedesign"
 
+msgid "To exit fheroes2, press the Home button or swipe up."
+msgstr ""
+
+msgid "Are you sure you want to quit?"
+msgstr "Er du sikker på om du vil afslutte?"
+
 msgid "High Scores"
 msgstr "Ranglister"
 
@@ -5630,6 +5701,9 @@ msgstr "Tekstunderstøttelsestilstand"
 msgid "hotkey|toggle developer mode"
 msgstr "Udviklertilstand (til/fra)"
 
+msgid "hotkey|quit"
+msgstr "Forlad"
+
 msgid "hotkey|new game"
 msgstr "Nyt spil"
 
@@ -5653,9 +5727,6 @@ msgstr "Flerspillerspil"
 
 msgid "hotkey|settings"
 msgstr "Indstillinger"
-
-msgid "hotkey|quit"
-msgstr "Forlad"
 
 msgid "hotkey|select map"
 msgstr "Vælg kort"
@@ -5942,6 +6013,14 @@ msgstr "Borg-vindue"
 
 msgid "hotkey|buy all monsters in well"
 msgstr "Rekruttér alle væsener fra brønden"
+
+#, fuzzy
+msgid "hotkey|merge troops with hero"
+msgstr "Næste helt"
+
+#, fuzzy
+msgid "hotkey|merge troops with garrison"
+msgstr "Gentag forrige handling"
 
 msgid "hotkey|split stack by half"
 msgstr "Del tropper i to"
@@ -6628,12 +6707,6 @@ msgid ""
 msgstr ""
 "En eller flere helte kan stadig ride. Er du sikker på at du vil ende din tur?"
 
-msgid "To exit fheroes2, press the Home button or swipe up."
-msgstr ""
-
-msgid "Are you sure you want to quit?"
-msgstr "Er du sikker på om du vil afslutte?"
-
 msgid "Are you sure you want to restart? (Your current game will be lost.)"
 msgstr ""
 "Er du sikker på, om du vil indlæse et nyt spil? (Dit nuværende spil vil gå "
@@ -6781,7 +6854,8 @@ msgstr ""
 "standard\n"
 "værdi"
 
-msgid "Set %{skill} Skill"
+#, fuzzy
+msgid "Set %{skill} Skill:"
 msgstr "Indstil %{skill} Evne"
 
 msgid "Set %{skill} base value. Right-click to reset all skills to default."
@@ -6939,6 +7013,9 @@ msgstr "Vietnamesisk"
 
 msgid "Greek"
 msgstr "Græsk"
+
+msgid "Esperanto"
+msgstr ""
 
 msgid "Slow"
 msgstr "Langsom"
@@ -8692,16 +8769,19 @@ msgstr "Indstil magipointværdi. Højreklik: Nulstil til standardværdi."
 msgid "Change Spell Points value. Right-click to reset to default value."
 msgstr "Skift magipointværdi. Højreklik: Nulstil til standardværdi."
 
-msgid "Set Spell Points value"
+#, fuzzy
+msgid "Set Spell Points value:"
 msgstr "Indstil antal magipoint"
 
 msgid "View Spell Points Info"
 msgstr "Vis info om mana"
 
-msgid "Set patrol radius in tiles"
+#, fuzzy
+msgid "Set patrol radius in tiles:"
 msgstr "Indstil patruljeradius i feltantal"
 
-msgid "Enter hero's name"
+#, fuzzy
+msgid "Enter hero's name:"
 msgstr "Indtast heltens navn"
 
 msgid "Click to change class."
@@ -8765,6 +8845,10 @@ msgstr "Helten patruljerer en radius på %{tiles} felter. Venstreklik: Slå fra.
 
 msgid "Click to enable hero's patrol mode."
 msgstr "Klik for at aktivere heltens patruljetilstand."
+
+#, fuzzy
+msgid "Do you want to save the changes made?"
+msgstr "Klik for at acceptere de foretagne ændringer."
 
 msgid "Blood Morale"
 msgstr "Blodsmoral"
@@ -12816,6 +12900,16 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "En ukendt styrke er ved at genopstå..."
+
+#~ msgid ""
+#~ "Cell\n"
+#~ "Details"
+#~ msgstr ""
+#~ "Celle-\n"
+#~ "detaljer"
+
+#~ msgid "and many-many other contributors and supporters!"
+#~ msgstr "og mange-mange andre bidragydere og tilhængere!"
 
 #~ msgid "AI"
 #~ msgstr "AI"
