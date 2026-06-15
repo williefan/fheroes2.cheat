@@ -49,8 +49,8 @@
 #include "editor_spell_selection.h"
 #include "editor_sphinx_window.h"
 #include "game.h"
+#include "game_auto_playtest.h"
 #include "game_delays.h"
-#include "game_exit.h"
 #include "game_hotkeys.h"
 #include "game_static.h"
 #include "ground.h"
@@ -76,6 +76,7 @@
 #include "render_processor.h"
 #include "resource.h"
 #include "screen.h"
+#include "serialize.h"
 #include "settings.h"
 #include "spell.h"
 #include "system.h"
@@ -1385,6 +1386,24 @@ namespace
         return os.str();
     }
 #endif
+
+    fheroes2::GameMode processEditorExitEvent()
+    {
+#if defined( __IPHONEOS__ )
+        // iOS discourages to exit a running application.
+        fheroes2::showStandardTextMessage( _( "Quit" ),
+                                           _( "To exit fheroes2, press the Home button or swipe up. (Any unsaved changes to the current map will be lost.)" ),
+                                           Dialog::OK );
+#else
+        if ( Dialog::YES
+             & fheroes2::showStandardTextMessage( _( "Quit" ), _( "Are you sure you want to quit? (Any unsaved changes to the current map will be lost.)" ),
+                                                  Dialog::YES | Dialog::NO ) ) {
+            return fheroes2::GameMode::QUIT_GAME;
+        }
+#endif
+
+        return fheroes2::GameMode::CANCEL;
+    }
 }
 
 namespace Interface
@@ -1551,7 +1570,7 @@ namespace Interface
 
         while ( res == fheroes2::GameMode::CANCEL ) {
             if ( !le.HandleEvents( Game::isDelayNeeded( delayTypes ), true ) ) {
-                if ( Game::processExitEvent() == fheroes2::GameMode::QUIT_GAME ) {
+                if ( processEditorExitEvent() == fheroes2::GameMode::QUIT_GAME ) {
                     res = fheroes2::GameMode::QUIT_GAME;
 
                     break;
@@ -1565,7 +1584,7 @@ namespace Interface
             // Hotkeys' press event processing.
             if ( le.isAnyKeyPressed() ) {
                 if ( HotKeyPressEvent( Game::HotKeyEvent::GLOBAL_APP_QUIT ) || HotKeyPressEvent( Game::HotKeyEvent::DEFAULT_CANCEL ) ) {
-                    res = Game::processExitEvent();
+                    res = processEditorExitEvent();
                 }
                 else if ( HotKeyPressEvent( Game::HotKeyEvent::EDITOR_NEW_MAP_MENU ) ) {
                     res = eventNewMap();
@@ -1616,6 +1635,9 @@ namespace Interface
                     VERBOSE_LOG( getAllMapTexts( _mapFormat ) )
                 }
 #endif
+                else if ( HotKeyPressEvent( Game::HotKeyEvent::EDITOR_AUTO_PLAYTEST ) ) {
+                    _runAutoPlaytest();
+                }
                 else if ( HotKeyPressEvent( Game::HotKeyEvent::WORLD_SCROLL_LEFT ) ) {
                     if ( !_gameArea.isDragScroll() && conf.ScrollSpeed() != SCROLL_SPEED_NONE ) {
                         _gameArea.SetScroll( SCROLL_LEFT );
@@ -1909,6 +1931,12 @@ namespace Interface
                             _resetMovableObjectInfo();
                         }
                     }
+                    else if ( ( le.isMouseWheelUp() && _editorPanel.setPreviousSelectedObjectType() )
+                              || ( le.isMouseWheelDown() && _editorPanel.setNextSelectedObjectType() ) ) {
+                        _editorPanel.setObjectBasedCursor( _editorPanel.getSelectedObjectType(), _editorPanel.getSelectedObjectGroup() );
+                        updateCursor( _tileUnderCursor );
+                        _redraw |= REDRAW_GAMEAREA | REDRAW_PANEL;
+                    }
                 }
                 else if ( _areaSelectionStartTileId != -1 ) {
                     assert( _editorPanel.showAreaSelectRect() && isBrushEmpty );
@@ -2052,6 +2080,7 @@ namespace Interface
         const fheroes2::ButtonBase & buttonSaveMap = optionButtons.button( 3 );
         const fheroes2::ButtonBase & buttonMainMenu = optionButtons.button( 4 );
         const fheroes2::ButtonBase & buttonQuit = optionButtons.button( 5 );
+        const fheroes2::ButtonBase & buttonAutoPlaytest = optionButtons.button( 6 );
 
         fheroes2::Button buttonCancel;
 
@@ -2085,7 +2114,7 @@ namespace Interface
             }
 
             if ( le.MouseClickLeft( buttonQuit.area() ) || Game::HotKeyPressEvent( Game::HotKeyEvent::GLOBAL_APP_QUIT ) ) {
-                if ( Game::processExitEvent() == fheroes2::GameMode::QUIT_GAME ) {
+                if ( processEditorExitEvent() == fheroes2::GameMode::QUIT_GAME ) {
                     return fheroes2::GameMode::QUIT_GAME;
                 }
             }
@@ -2098,36 +2127,20 @@ namespace Interface
                 }
             }
             else if ( le.MouseClickLeft( buttonStartMap.area() ) ) {
-                bool isNameEmpty = conf.getCurrentMapInfo().name.empty();
-                if ( isNameEmpty
-                     && fheroes2::showStandardTextMessage(
-                            _( "Unsaved Changes" ),
-                            _( "This map has either terrain changes, undo history or has not yet been saved to a file.\n\nDo you wish to save the current map?" ),
-                            Dialog::YES | Dialog::NO )
-                            == Dialog::NO ) {
+                if ( !Get()._prepareMapForGameplay() ) {
                     continue;
                 }
-                if ( isNameEmpty ) {
-                    Get().saveMapToFile();
-                    isNameEmpty = conf.getCurrentMapInfo().name.empty();
-                    if ( isNameEmpty ) {
-                        // Saving was aborted.
-                        display.render( background.totalArea() );
-                        continue;
-                    }
+
+                if ( fheroes2::showStandardTextMessage( _( "Start Map" ),
+                                                        _( "Do you wish to leave the Editor and start the map? (Any unsaved changes to the current map will be lost.)" ),
+                                                        Dialog::YES | Dialog::NO )
+                     == Dialog::YES ) {
+                    return fheroes2::GameMode::NEW_STANDARD;
                 }
-                if ( conf.getCurrentMapInfo().colorsAvailableForHumans == 0 ) {
-                    fheroes2::showStandardTextMessage( _( "Unplayable Map" ),
-                                                       _( "This map is not playable. You need at least one human player for the map to be playable." ), Dialog::OK );
-                }
-                else {
-                    if ( fheroes2::
-                             showStandardTextMessage( _( "Start Map" ),
-                                                      _( "Do you wish to leave the Editor and start the map? (Any unsaved changes to the current map will be lost.)" ),
-                                                      Dialog::YES | Dialog::NO )
-                         == Dialog::YES ) {
-                        return fheroes2::GameMode::NEW_STANDARD;
-                    }
+            }
+            else if ( le.MouseClickLeft( buttonAutoPlaytest.area() ) ) {
+                if ( Get()._runAutoPlaytest() ) {
+                    return fheroes2::GameMode::CANCEL;
                 }
             }
             else if ( le.MouseClickLeft( buttonCancel.area() ) || Game::HotKeyCloseWindow() ) {
@@ -2147,6 +2160,9 @@ namespace Interface
             }
             else if ( le.isMouseRightButtonPressedInArea( buttonQuit.area() ) ) {
                 fheroes2::showStandardTextMessage( _( "Quit" ), _( "Quit out of the map editor." ), Dialog::ZERO );
+            }
+            else if ( le.isMouseRightButtonPressedInArea( buttonAutoPlaytest.area() ) ) {
+                fheroes2::showStandardTextMessage( _( "Auto Playtest" ), _( "Run an automatic playtest of the map." ), Dialog::ZERO );
             }
             else if ( le.isMouseRightButtonPressedInArea( buttonMainMenu.area() ) ) {
                 fheroes2::showStandardTextMessage( _( "Main Menu" ), _( "Return to the game's Main Menu." ), Dialog::ZERO );
@@ -3571,5 +3587,78 @@ namespace Interface
         }
 
         return { minPos.x, minPos.y, maxPos.x - minPos.x + 1, maxPos.y - minPos.y + 1 };
+    }
+
+    bool EditorInterface::_prepareMapForGameplay()
+    {
+        const auto & conf = Settings::Get();
+
+        bool isNameEmpty = conf.getCurrentMapInfo().name.empty();
+        if ( isNameEmpty
+             && fheroes2::showStandardTextMessage(
+                    _( "Unsaved Changes" ),
+                    _( "This map has either terrain changes, undo history or has not yet been saved to a file.\n\nDo you wish to save the current map?" ),
+                    Dialog::YES | Dialog::NO )
+                    == Dialog::NO ) {
+            return false;
+        }
+
+        if ( isNameEmpty ) {
+            saveMapToFile();
+            isNameEmpty = conf.getCurrentMapInfo().name.empty();
+            if ( isNameEmpty ) {
+                // File save I/O operation failed.
+                return false;
+            }
+        }
+
+        if ( conf.getCurrentMapInfo().colorsAvailableForHumans == 0 ) {
+            fheroes2::showStandardTextMessage( _( "Unplayable Map" ), _( "This map is not playable. You need at least one human player for the map to be playable." ),
+                                               Dialog::OK );
+            return false;
+        }
+
+        return true;
+    }
+
+    bool EditorInterface::_runAutoPlaytest()
+    {
+        if ( !_prepareMapForGameplay() ) {
+            return false;
+        }
+
+        // Make a copy of the current map.
+        Settings & conf = Settings::Get();
+        Maps::FileInfo mapInfo = conf.getCurrentMapInfo();
+
+        RWStreamBuf _beforeMapFormat;
+        if ( !Maps::Map_Format::saveMap( _beforeMapFormat, _mapFormat ) ) {
+            assert( 0 );
+            return false;
+        }
+
+        const uint32_t _latestObjectUIDBefore{ Maps::getLastObjectUID() };
+
+        if ( fheroes2::openMapAutoPlayTest() ) {
+            // Restore the map.
+            if ( !Maps::Map_Format::loadMap( _beforeMapFormat, _mapFormat ) ) {
+                assert( 0 );
+            }
+
+            if ( !Maps::readMapInEditor( _mapFormat ) ) {
+                // If this assertion blows up then something is really wrong with the Editor.
+                assert( 0 );
+            }
+
+            Maps::setLastObjectUID( _latestObjectUIDBefore );
+            conf.setCurrentMapInfo( std::move( mapInfo ) );
+
+            // Make sure to redraw everything as we are switching from the game into the Editor.
+            setRedraw( REDRAW_ALL );
+
+            return true;
+        }
+
+        return false;
     }
 }
