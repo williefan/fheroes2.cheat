@@ -581,7 +581,7 @@ void Heroes::LoadFromMP2( const int32_t mapIndex, const PlayerColor colorType, c
     const int level = GetLevel();
     if ( level > 1 ) {
         for ( int i = 1; i < level; ++i ) {
-            _levelUp( doesHeroHaveCustomSecondarySkills, true );
+            _levelUp( doesHeroHaveCustomSecondarySkills, true, true );
         }
     }
 
@@ -706,7 +706,7 @@ void Heroes::applyHeroMetadata( const Maps::Map_Format::HeroMetadata & heroMetad
         const int16_t level = heroMetadata.customLevel > -1 ? heroMetadata.customLevel : static_cast<int16_t>( GetLevel() );
         if ( level > 1 ) {
             for ( int16_t i = 1; i < level; ++i ) {
-                _levelUp( doesHeroHaveCustomSecondarySkills, true );
+                _levelUp( doesHeroHaveCustomSecondarySkills, true, true );
             }
         }
     }
@@ -1473,13 +1473,13 @@ void Heroes::IncreaseExperience( const uint32_t amount, const bool autoselect /*
 
     for ( int level = oldLevel; level < newLevel - 1; ++level ) {
         _experience = GetExperienceFromLevel( level );
-        _levelUp( false, autoselect );
+        _levelUp( false, autoselect, false );
     }
 
     _experience = updatedExperience;
 
     if ( newLevel > oldLevel ) {
-        _levelUp( false, autoselect );
+        _levelUp( false, autoselect, false );
     }
 }
 
@@ -1830,7 +1830,7 @@ int Heroes::getNumOfTravelDays( const int32_t dstIdx ) const
     return days;
 }
 
-void Heroes::_levelUp( const bool skipSecondary, const bool autoselect /* = false */ )
+void Heroes::_levelUp( const bool skipSecondary, const bool autoselect, const bool isMapLoading )
 {
     const HeroSeedsForLevelUp seeds = _getSeedsForLevelUp();
 
@@ -1840,11 +1840,11 @@ void Heroes::_levelUp( const bool skipSecondary, const bool autoselect /* = fals
     DEBUG_LOG( DBG_GAME, DBG_INFO, "for " << GetName() << ", up " << Skill::Primary::String( primarySkill ) )
 
     if ( !skipSecondary ) {
-        _levelUpSecondarySkill( seeds, primarySkill, autoselect );
+        _levelUpSecondarySkill( seeds, primarySkill, autoselect, isMapLoading );
     }
 }
 
-void Heroes::_levelUpSecondarySkill( const HeroSeedsForLevelUp & seeds, const int primary, const bool autoselect /* = false */ )
+void Heroes::_levelUpSecondarySkill( const HeroSeedsForLevelUp & seeds, const int primary, const bool autoselect, const bool isMapLoading )
 {
     const auto [sec1, sec2] = _secondarySkills.FindSkillsForLevelUp( _race, seeds.seedSecondarySkill1, seeds.seedSecondarySkill2 );
 
@@ -1891,9 +1891,11 @@ void Heroes::_levelUpSecondarySkill( const HeroSeedsForLevelUp & seeds, const in
             _secondarySkills.AddSkill( Skill::Secondary( selected.Skill(), Skill::Level::BASIC ) );
         }
 
-        // Campaign-only heroes get additional experience immediately upon their creation, even while still neutral.
-        // We should not try to scout the area around such heroes.
-        if ( selected.Skill() == Skill::Secondary::SCOUTING && GetColor() != PlayerColor::NONE ) {
+        // We must not scout area around a hero for 2 cases:
+        // - while loading a map as we will clear the fog at the start of every player turn;
+        // - for human's campaign-only heroes as they get additional experience immediately upon their creation,
+        //   even while still neutral.
+        if ( !isMapLoading && selected.Skill() == Skill::Secondary::SCOUTING && GetColor() != PlayerColor::NONE ) {
             Scout( GetIndex() );
             if ( isControlHuman() ) {
                 ScoutRadar();
@@ -1948,6 +1950,10 @@ void Heroes::Dismiss( const int reason )
     // Reset army to default state for hero's race if hero did not surrender in battle.
     if ( ( reason & Battle::RESULT_SURRENDER ) == 0 ) {
         _army.Reset( true );
+    }
+    else if ( !_army.isValid() ) {
+        // Reset empty army for surrendered hero.
+        _army.Reset( false );
     }
 
     const PlayerColor heroColor = GetColor();

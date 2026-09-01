@@ -4246,6 +4246,9 @@ msgstr "Mapa uložena do: "
 msgid "Failed to save the map."
 msgstr "Uložení mapy se nezdařilo."
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr "Neuložené změny"
 
@@ -6081,6 +6084,9 @@ msgstr "Obrazovka města"
 msgid "Army Actions"
 msgstr "Akce armády"
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "Tým fheroes2 Resurrection uvádí"
+
 msgid "The save file is corrupted."
 msgstr "Soubor je požkozen."
 
@@ -6145,9 +6151,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Zrušit a vrátit se do hlavní nabídky."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "Tým fheroes2 Resurrection uvádí"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr "Vítejte ve hře Heroes of Might and Magic II běžící na enginu fheroes2!"
@@ -12776,6 +12779,14 @@ msgstr "On jí řekl: Yada yada yada... ona pak řekla: Bla, bla, bla..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "Neznámá síla se probouzí..."
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "KAMPAŇ\n"
+#~ "DATADISKU"
 
 #~ msgid "Create a new map from scratch."
 #~ msgstr "Vytvořit novou mapu od základu."

@@ -4105,6 +4105,9 @@ msgstr ""
 msgid "Failed to save the map."
 msgstr ""
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr ""
 
@@ -5890,6 +5893,9 @@ msgstr "Ecranul orașului"
 msgid "Army Actions"
 msgstr ""
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "Echipa fheroes2 Resurrection prezintă"
+
 msgid "The save file is corrupted."
 msgstr "Acest fișier este corupt."
 
@@ -5949,9 +5955,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr ""
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "Echipa fheroes2 Resurrection prezintă"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr ""
@@ -11701,6 +11704,14 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "CAMPANIE\n"
+#~ "EXPANSIUNE"
 
 #~ msgid "and many-many other contributors and supporters!"
 #~ msgstr "și mulți alți contributori și suporteri!"

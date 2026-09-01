@@ -4460,6 +4460,9 @@ msgstr ""
 msgid "Failed to save the map."
 msgstr "Lagringsfil:"
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr ""
 
@@ -6348,6 +6351,9 @@ msgstr "Heltevindu"
 msgid "Army Actions"
 msgstr ""
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "Teamet bak fheroes2 Resurrection presenterer"
+
 msgid "The save file is corrupted."
 msgstr "Lagringsfilen er korrupt."
 
@@ -6413,9 +6419,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Avbryt og dra tilbake til hovedmenyen."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "Teamet bak fheroes2 Resurrection presenterer"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr ""
@@ -13363,6 +13366,15 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "En ukjent styrke holder på å komme tilbake..."
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "PRISEN\n"
+#~ "FOR\n"
+#~ "LOJALITET"
 
 #, fuzzy
 #~ msgid "Create a new map from scratch."

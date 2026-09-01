@@ -4375,6 +4375,9 @@ msgstr ""
 msgid "Failed to save the map."
 msgstr "Tệp để Lưu:"
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr ""
 
@@ -6258,6 +6261,9 @@ msgstr "Màn hình Thị trấn"
 msgid "Army Actions"
 msgstr "Hành động Quân đội"
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "fheroes2 Resurrection Team giới thiệu"
+
 msgid "The save file is corrupted."
 msgstr "File lưu bị hỏng."
 
@@ -6324,9 +6330,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Hủy quay lại menu chính."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "fheroes2 Resurrection Team giới thiệu"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr ""
@@ -13177,6 +13180,14 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "Một lực lượng bóng tối đang hồi sinh..."
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "CHIẾN DỊCH\n"
+#~ "MỞ RỘNG"
 
 #, fuzzy
 #~ msgid "Create a new map from scratch."

@@ -4251,6 +4251,9 @@ msgstr "Mapa zapisana do: "
 msgid "Failed to save the map."
 msgstr "Nie udało się zapisać mapy."
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr "Niezapisane zmiany"
 
@@ -6050,6 +6053,9 @@ msgstr "Ekran miasta"
 msgid "Army Actions"
 msgstr "Akcje armii"
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "fheroes2 Resurrection Team prezentuje"
+
 msgid "The save file is corrupted."
 msgstr "Plik z zapisaną grą jest uszkodzony."
 
@@ -6115,9 +6121,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Wróć do głównego menu."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "fheroes2 Resurrection Team prezentuje"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr ""
@@ -12859,6 +12862,15 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "Nieznana siła jest wskrzeszana…"
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "KAMPANIA\n"
+#~ "Z ROZSZE-\n"
+#~ "RZENIA"
 
 #~ msgid "Create a new map from scratch."
 #~ msgstr "Utwórz nową mapę od podstaw."

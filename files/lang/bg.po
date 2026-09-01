@@ -4397,6 +4397,9 @@ msgstr ""
 msgid "Failed to save the map."
 msgstr "Файл за запазване:"
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr ""
 
@@ -6293,6 +6296,9 @@ msgstr "Екран на героя"
 msgid "Army Actions"
 msgstr ""
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "fheroes2 Отбор възкрeсяване представя"
+
 msgid "The save file is corrupted."
 msgstr "Запазеният файл е повреден."
 
@@ -6359,9 +6365,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Отказ обратно към главното меню."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "fheroes2 Отбор възкрeсяване представя"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr ""
@@ -13144,6 +13147,12 @@ msgstr "Той й каза: \"Яда, бля, дя...\" и тогава тя к�
 
 msgid "An unknown force is being resurrected..."
 msgstr "Непозната сила възкръсва..."
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr "ЕКСПАНЗИЯ"
 
 #, fuzzy
 #~ msgid "Create a new map from scratch."

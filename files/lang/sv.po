@@ -4225,6 +4225,9 @@ msgstr "Kartan sparades i:"
 msgid "Failed to save the map."
 msgstr "Misslyckades att spara kartan."
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr "Osparade ändringar"
 
@@ -6018,6 +6021,9 @@ msgstr "Stadsvy"
 msgid "Army Actions"
 msgstr "Arméåtgärder"
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "fheroes2 Resurrection Team presenterar"
+
 msgid "The save file is corrupted."
 msgstr "Sparfilen är korrupt."
 
@@ -6083,9 +6089,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Avbryt och gå tillbaka till huvudmenyn."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "fheroes2 Resurrection Team presenterar"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr "Välkommen till Heroes of Might and Magic II genom fheroes2 spelmotor!"
@@ -12764,6 +12767,14 @@ msgstr "Han sa till henne: Jag bah... och hon svarade: Du bah..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "En okänd kraft återuppstår..."
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "EXPANSIONS-\n"
+#~ "KAMPANJ"
 
 #~ msgid "Create a new map from scratch."
 #~ msgstr "Skapa en ny blank karta."

@@ -4327,6 +4327,9 @@ msgstr "Kortet er gemt i: "
 msgid "Failed to save the map."
 msgstr "Kunne ikke gemme kortet."
 
+msgid "The selected object has been moved to the top layer."
+msgstr ""
+
 msgid "Unsaved Changes"
 msgstr "Ikke-gemte ændringer"
 
@@ -6161,6 +6164,9 @@ msgstr "Borg-vindue"
 msgid "Army Actions"
 msgstr "Hær-handlinger"
 
+msgid "fheroes2 Resurrection Team presents"
+msgstr "Teamet bag fheroes2 Resurrection præsenterer"
+
 msgid "The save file is corrupted."
 msgstr "Det gemte spil er korrupt."
 
@@ -6226,9 +6232,6 @@ msgstr ""
 
 msgid "Cancel back to the main menu."
 msgstr "Afbryd og gå tilbage til hovedmenuen."
-
-msgid "fheroes2 Resurrection Team presents"
-msgstr "Teamet bag fheroes2 Resurrection præsenterer"
 
 msgid "Welcome to Heroes of Might and Magic II powered by fheroes2 engine!"
 msgstr ""
@@ -12989,6 +12992,14 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "En ukendt styrke er ved at genopstå..."
+
+#, fuzzy
+#~ msgid ""
+#~ "RESURRECTION\n"
+#~ "CAMPAIGN"
+#~ msgstr ""
+#~ "UDVIDELSE\n"
+#~ "FELTTOG"
 
 #~ msgid "Create a new map from scratch."
 #~ msgstr "Opret et nyt kort fra bunden."
