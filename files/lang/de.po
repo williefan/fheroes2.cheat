@@ -5468,9 +5468,6 @@ msgstr "Feldzugschwierigkeit"
 msgid "campaignDifficulty|Increased"
 msgstr "Feldzugschwierigkeit"
 
-msgid "Campaign Difficulty"
-msgstr "Feldzugschwierigkeit"
-
 #, fuzzy
 msgid ""
 "Choose this difficulty to experience the game's story with decreased "
@@ -5495,6 +5492,9 @@ msgid ""
 msgstr ""
 "Wählt diesen Schwierigkeitsgrad, wenn Ihr eine größere Herausforderung "
 "sucht. Die KI ist stärker als in der normalen Schwierigkeit."
+
+msgid "Campaign Difficulty"
+msgstr "Feldzugschwierigkeit"
 
 msgid ""
 "Congratulations!\n"
@@ -12729,8 +12729,10 @@ msgstr "Erhöht die Angriffsfertigkeit einer Einheit gegen Drachen erheblich."
 msgid "Blood Lust"
 msgstr "Blutdurst"
 
-msgid "Increases a unit's attack skill."
-msgstr "Erhöht die Angriffsfertigkeit einer Einheit."
+msgid ""
+"Increases a unit's attack skill by 3. The effect lasts for 3 rounds of "
+"combat, regardless of spell power."
+msgstr ""
 
 msgid "Animate Dead"
 msgstr "Tote beleben"
@@ -13082,6 +13084,9 @@ msgstr "Er sagte ihr: Yada yada yada... und dann sagte sie: Bla, bla, bla..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "Eine unbekannte Macht wird wiederbelebt..."
+
+#~ msgid "Increases a unit's attack skill."
+#~ msgstr "Erhöht die Angriffsfertigkeit einer Einheit."
 
 #~ msgid "Easy"
 #~ msgstr "Leicht"

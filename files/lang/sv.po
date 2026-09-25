@@ -5345,9 +5345,6 @@ msgstr "Kampanjsvårighet"
 msgid "campaignDifficulty|Increased"
 msgstr "Kampanjsvårighet"
 
-msgid "Campaign Difficulty"
-msgstr "Kampanjsvårighet"
-
 #, fuzzy
 msgid ""
 "Choose this difficulty to experience the game's story with decreased "
@@ -5371,6 +5368,9 @@ msgid ""
 msgstr ""
 "Välj denna svårighetsgrad om du vill ha en utmaning. Datorn är starkare i "
 "jämförelse med normal svårighetsgrad."
+
+msgid "Campaign Difficulty"
+msgstr "Kampanjsvårighet"
 
 msgid ""
 "Congratulations!\n"
@@ -12426,8 +12426,10 @@ msgstr "Höjer kraftigt en varelses Anfall mot Drakar."
 msgid "Blood Lust"
 msgstr "Blodtörst"
 
-msgid "Increases a unit's attack skill."
-msgstr "Höjer en varelses Anfall."
+msgid ""
+"Increases a unit's attack skill by 3. The effect lasts for 3 rounds of "
+"combat, regardless of spell power."
+msgstr ""
 
 msgid "Animate Dead"
 msgstr "Animera Död"
@@ -12777,6 +12779,9 @@ msgstr "Han sa till henne: Jag bah... och hon svarade: Du bah..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "En okänd kraft återuppstår..."
+
+#~ msgid "Increases a unit's attack skill."
+#~ msgstr "Höjer en varelses Anfall."
 
 #~ msgid "Easy"
 #~ msgstr "Lätt"

@@ -5395,9 +5395,6 @@ msgstr "Dificuldade da Campanha"
 msgid "campaignDifficulty|Increased"
 msgstr "Dificuldade da Campanha"
 
-msgid "Campaign Difficulty"
-msgstr "Dificuldade da Campanha"
-
 #, fuzzy
 msgid ""
 "Choose this difficulty to experience the game's story with decreased "
@@ -5422,6 +5419,9 @@ msgid ""
 msgstr ""
 "Escolha esta dificuldade se você deseja mais desafio. A inteligência "
 "artificial será mais forte do que na dificuldade Normal."
+
+msgid "Campaign Difficulty"
+msgstr "Dificuldade da Campanha"
 
 msgid ""
 "Congratulations!\n"
@@ -12554,8 +12554,10 @@ msgstr "Aumenta muito a Habilidade de Ataque de uma unidade contra os Dragões."
 msgid "Blood Lust"
 msgstr "Sede de Sangue"
 
-msgid "Increases a unit's attack skill."
-msgstr "Aumenta a Habilidade de Ataque de uma unidade."
+msgid ""
+"Increases a unit's attack skill by 3. The effect lasts for 3 rounds of "
+"combat, regardless of spell power."
+msgstr ""
 
 msgid "Animate Dead"
 msgstr "Despertar Mortos"
@@ -12913,6 +12915,9 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "Uma força misteriosa está ressuscitando..."
+
+#~ msgid "Increases a unit's attack skill."
+#~ msgstr "Aumenta a Habilidade de Ataque de uma unidade."
 
 #~ msgid "Easy"
 #~ msgstr "Fácil"

@@ -5482,9 +5482,6 @@ msgstr "Felttogsniveau"
 msgid "campaignDifficulty|Increased"
 msgstr "Felttogsniveau"
 
-msgid "Campaign Difficulty"
-msgstr "Felttogsniveau"
-
 #, fuzzy
 msgid ""
 "Choose this difficulty to experience the game's story with decreased "
@@ -5508,6 +5505,9 @@ msgid ""
 msgstr ""
 "Vælg dette niveau, for at opleve felttoget med større udfordring. AI-"
 "spillerne vil være stærkere end de vil være på 'normal'."
+
+msgid "Campaign Difficulty"
+msgstr "Felttogsniveau"
 
 msgid ""
 "Congratulations!\n"
@@ -12639,8 +12639,10 @@ msgstr "Øger i høj grad en trops angrebsevne mod drager."
 msgid "Blood Lust"
 msgstr "Blodtørst"
 
-msgid "Increases a unit's attack skill."
-msgstr "Øger en trops angrebsevne."
+msgid ""
+"Increases a unit's attack skill by 3. The effect lasts for 3 rounds of "
+"combat, regardless of spell power."
+msgstr ""
 
 msgid "Animate Dead"
 msgstr ""
@@ -13002,6 +13004,9 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "En ukendt styrke er ved at genopstå..."
+
+#~ msgid "Increases a unit's attack skill."
+#~ msgstr "Øger en trops angrebsevne."
 
 #~ msgid "Easy"
 #~ msgstr "Let"

@@ -5392,9 +5392,6 @@ msgstr "Складанасць кампаніі"
 msgid "campaignDifficulty|Increased"
 msgstr "Складанасць кампаніі"
 
-msgid "Campaign Difficulty"
-msgstr "Складанасць кампаніі"
-
 #, fuzzy
 msgid ""
 "Choose this difficulty to experience the game's story with decreased "
@@ -5418,6 +5415,9 @@ msgid ""
 msgstr ""
 "Выбірайце гэты ўзровень складанасці, калі шукаеце большага выкліку для сябе. "
 "Камп’ютар будзе гуляць мацней, чым пры звычайным узроўні складанасці."
+
+msgid "Campaign Difficulty"
+msgstr "Складанасць кампаніі"
 
 msgid ""
 "Congratulations!\n"
@@ -12570,10 +12570,10 @@ msgstr ""
 msgid "Blood Lust"
 msgstr "Крыважэрнасць"
 
-msgid "Increases a unit's attack skill."
+msgid ""
+"Increases a unit's attack skill by 3. The effect lasts for 3 rounds of "
+"combat, regardless of spell power."
 msgstr ""
-"Павышаюць сілу атакі выбранага атрада героя на 3. Чары дзейнічаюць колькасць "
-"раўндаў, роўную сіле магіі героя."
 
 msgid "Animate Dead"
 msgstr "Ажыўленне мёртвых"
@@ -12948,6 +12948,11 @@ msgstr "А ён ёй... А яна яму... А ён ёй на тое..."
 
 msgid "An unknown force is being resurrected..."
 msgstr "Невядомая сіла ўваскрашаецца..."
+
+#~ msgid "Increases a unit's attack skill."
+#~ msgstr ""
+#~ "Павышаюць сілу атакі выбранага атрада героя на 3. Чары дзейнічаюць "
+#~ "колькасць раўндаў, роўную сіле магіі героя."
 
 #~ msgid "Easy"
 #~ msgstr "Лёгкая"

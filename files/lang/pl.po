@@ -5376,9 +5376,6 @@ msgstr "Stopień trudności kampanii"
 msgid "campaignDifficulty|Increased"
 msgstr "Stopień trudności kampanii"
 
-msgid "Campaign Difficulty"
-msgstr "Stopień trudności kampanii"
-
 #, fuzzy
 msgid ""
 "Choose this difficulty to experience the game's story with decreased "
@@ -5402,6 +5399,9 @@ msgid ""
 msgstr ""
 "Wybierz tę opcję jeśli jesteś gotów na wyzwanie. AI rozgrywa misje lepiej "
 "niż przy normalnym poziomie trudności."
+
+msgid "Campaign Difficulty"
+msgstr "Stopień trudności kampanii"
 
 msgid ""
 "Congratulations!\n"
@@ -12516,8 +12516,10 @@ msgstr "Znacznie zwiększa umiejętność ataku jednostki w walce ze smokami."
 msgid "Blood Lust"
 msgstr "Żądza Krwi"
 
-msgid "Increases a unit's attack skill."
-msgstr "Zwiększa umiejętność ataku jednostki."
+msgid ""
+"Increases a unit's attack skill by 3. The effect lasts for 3 rounds of "
+"combat, regardless of spell power."
+msgstr ""
 
 msgid "Animate Dead"
 msgstr "Ożywienie Martwych"
@@ -12872,6 +12874,9 @@ msgstr ""
 
 msgid "An unknown force is being resurrected..."
 msgstr "Nieznana siła jest wskrzeszana…"
+
+#~ msgid "Increases a unit's attack skill."
+#~ msgstr "Zwiększa umiejętność ataku jednostki."
 
 #~ msgid "Easy"
 #~ msgstr "Łatwa"
